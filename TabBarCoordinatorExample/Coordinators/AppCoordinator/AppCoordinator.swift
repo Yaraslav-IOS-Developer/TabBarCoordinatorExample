@@ -9,11 +9,12 @@ import UIKit
 
 
 final class AppCoordinator: CoordinatorProtocol {
-  var navigation: UINavigationController
+  private var authCoordinator: CoordinatorProtocol?
 
+  var navigation: UINavigationController
   var window: UIWindow?
   var factory: AppFactory?
-  var auth: Auth?
+  var auth: SessionCheckerAuth?
 
   init(navigation: UINavigationController, window: UIWindow, factory: AppFactory?, auth: Auth?) {
     self.navigation = navigation
@@ -23,6 +24,30 @@ final class AppCoordinator: CoordinatorProtocol {
   }
 
   func start() {
-    print("Here")
+    configureWindow()
+    startAuthCoordinator()
+  }
+
+  private func startAuthCoordinator() {
+    guard let auth = auth else { return }
+    if auth.isSessionActive {
+      print("Open tabBar")
+    } else {
+      authCoordinator = factory?.makeAuthCoordinator(navigation: navigation, delegate: self)
+      authCoordinator?.start()
+    }
+  }
+
+  private func configureWindow() {
+    window?.rootViewController = navigation
+    window?.makeKeyAndVisible()
+  }
+}
+
+extension AppCoordinator: AuthCoordinatorDelegate {
+  func didFinishLogin() {
+    startAuthCoordinator()
+    navigation.viewControllers = []
+    authCoordinator = nil
   }
 }
