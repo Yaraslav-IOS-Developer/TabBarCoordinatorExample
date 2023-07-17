@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C430BA622A65A58500642FE0 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA612A65A58500642FE0 /* AuthView.swift */; };
+		C430BA642A65A5BA00642FE0 /* AuthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C430BA632A65A5B900642FE0 /* AuthView.xib */; };
+		C430BA672A65A63700642FE0 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA662A65A63700642FE0 /* AuthViewController.swift */; };
+		C430BA6A2A65A70900642FE0 /* AuthFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA692A65A70900642FE0 /* AuthFactory.swift */; };
+		C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA6C2A65A83600642FE0 /* AuthCoordinator.swift */; };
+		C430BA712A65A9F700642FE0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA702A65A9F700642FE0 /* AuthViewModel.swift */; };
 		C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CE87D2A5F0E2C00E43E63 /* AppDelegate.swift */; };
 		C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CE87F2A5F0E2C00E43E63 /* SceneDelegate.swift */; };
 		C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47CE8862A5F0E2E00E43E63 /* Assets.xcassets */; };
@@ -19,6 +25,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C430BA612A65A58500642FE0 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		C430BA632A65A5B900642FE0 /* AuthView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuthView.xib; sourceTree = "<group>"; };
+		C430BA662A65A63700642FE0 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		C430BA692A65A70900642FE0 /* AuthFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFactory.swift; sourceTree = "<group>"; };
+		C430BA6C2A65A83600642FE0 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		C430BA702A65A9F700642FE0 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C47CE87A2A5F0E2C00E43E63 /* TabBarCoordinatorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBarCoordinatorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47CE87D2A5F0E2C00E43E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C47CE87F2A5F0E2C00E43E63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +55,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C430BA602A65A56700642FE0 /* AuthView */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA612A65A58500642FE0 /* AuthView.swift */,
+				C430BA632A65A5B900642FE0 /* AuthView.xib */,
+			);
+			path = AuthView;
+			sourceTree = "<group>";
+		};
+		C430BA652A65A61900642FE0 /* AuthViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA662A65A63700642FE0 /* AuthViewController.swift */,
+			);
+			path = AuthViewController;
+			sourceTree = "<group>";
+		};
+		C430BA682A65A6E100642FE0 /* AuthFactory */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA692A65A70900642FE0 /* AuthFactory.swift */,
+			);
+			path = AuthFactory;
+			sourceTree = "<group>";
+		};
+		C430BA6B2A65A81200642FE0 /* AuthCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA6C2A65A83600642FE0 /* AuthCoordinator.swift */,
+			);
+			path = AuthCoordinator;
+			sourceTree = "<group>";
+		};
+		C430BA6E2A65A9BB00642FE0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA6F2A65A9D800642FE0 /* AuthViewModel */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C430BA6F2A65A9D800642FE0 /* AuthViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA702A65A9F700642FE0 /* AuthViewModel.swift */,
+			);
+			path = AuthViewModel;
+			sourceTree = "<group>";
+		};
 		C47CE8712A5F0E2C00E43E63 = {
 			isa = PBXGroup;
 			children = (
@@ -65,8 +126,9 @@
 				C47CE8932A5F11F000E43E63 /* Coordinators */,
 				C4CBDD852A65789C001D1F4E /* Factories */,
 				C4CBDD892A657942001D1F4E /* Auth */,
-				C47CE8922A5F11E300E43E63 /* Controllers */,
 				C47CE8912A5F11C000E43E63 /* Views */,
+				C430BA6E2A65A9BB00642FE0 /* ViewModels */,
+				C47CE8922A5F11E300E43E63 /* Controllers */,
 				C47CE8942A5F120800E43E63 /* Resource */,
 				C47CE87F2A5F0E2C00E43E63 /* SceneDelegate.swift */,
 				C47CE88B2A5F0E2E00E43E63 /* Info.plist */,
@@ -77,6 +139,7 @@
 		C47CE8912A5F11C000E43E63 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C430BA602A65A56700642FE0 /* AuthView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -84,6 +147,7 @@
 		C47CE8922A5F11E300E43E63 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C430BA652A65A61900642FE0 /* AuthViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -93,6 +157,7 @@
 			children = (
 				C47CE89B2A5F135D00E43E63 /* CoordinatorProtocol */,
 				C47CE8952A5F124900E43E63 /* AppCoordinator */,
+				C430BA6B2A65A81200642FE0 /* AuthCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -126,8 +191,9 @@
 		C4CBDD852A65789C001D1F4E /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				C4CBDD862A6578C7001D1F4E /* AppFactory */,
 				C4CBDD8C2A657C0A001D1F4E /* DI */,
+				C4CBDD862A6578C7001D1F4E /* AppFactory */,
+				C430BA682A65A6E100642FE0 /* AuthFactory */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -216,6 +282,7 @@
 			files = (
 				C47CE88A2A5F0E2E00E43E63 /* LaunchScreen.storyboard in Resources */,
 				C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */,
+				C430BA642A65A5BA00642FE0 /* AuthView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,8 +297,13 @@
 				C47CE89A2A5F130600E43E63 /* AppCoordinator.swift in Sources */,
 				C4CBDD882A6578D1001D1F4E /* AppFactory.swift in Sources */,
 				C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */,
+				C430BA6A2A65A70900642FE0 /* AuthFactory.swift in Sources */,
 				C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */,
+				C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */,
 				C47CE8972A5F127A00E43E63 /* CoordinatorProtocol.swift in Sources */,
+				C430BA712A65A9F700642FE0 /* AuthViewModel.swift in Sources */,
+				C430BA622A65A58500642FE0 /* AuthView.swift in Sources */,
+				C430BA672A65A63700642FE0 /* AuthViewController.swift in Sources */,
 				C4CBDD8B2A65794E001D1F4E /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
