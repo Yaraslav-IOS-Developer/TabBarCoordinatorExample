@@ -10,11 +10,13 @@ import UIKit
 
 final class AppCoordinator: CoordinatorProtocol {
   private var authCoordinator: CoordinatorProtocol?
+  private var mainTabBarCoordinator: CoordinatorProtocol?
+
+  private var factory: AppFactory?
+  private var auth: SessionCheckerAuth?
 
   var navigation: UINavigationController
   var window: UIWindow?
-  var factory: AppFactory?
-  var auth: SessionCheckerAuth?
 
   init(navigation: UINavigationController, window: UIWindow, factory: AppFactory?, auth: Auth?) {
     self.navigation = navigation
@@ -25,29 +27,38 @@ final class AppCoordinator: CoordinatorProtocol {
 
   func start() {
     configureWindow()
-    startAuthCoordinator()
-  }
-
-  private func startAuthCoordinator() {
-    guard let auth = auth else { return }
-    if auth.isSessionActive {
-      print("Open tabBar")
-    } else {
-      authCoordinator = factory?.makeAuthCoordinator(navigation: navigation, delegate: self)
-      authCoordinator?.start()
-    }
+    startSomeCoordinator()
   }
 
   private func configureWindow() {
     window?.rootViewController = navigation
     window?.makeKeyAndVisible()
   }
+
+  private func startSomeCoordinator() {
+    guard let auth = auth else { return }
+    if auth.isSessionActive {
+      startMainTabBarCoordinator()
+    } else {
+      startAuthCoordinator()
+    }
+  }
+
+  private func startAuthCoordinator() {
+    authCoordinator = factory?.makeAuthCoordinator(navigation: navigation, delegate: self)
+    authCoordinator?.start()
+  }
+
+  private func startMainTabBarCoordinator() {
+    mainTabBarCoordinator = factory?.makeMainTabBarCoordinator(navigation: navigation)
+    mainTabBarCoordinator?.start()
+  }
 }
 
 extension AppCoordinator: AuthCoordinatorDelegate {
   func didFinishLogin() {
-    startAuthCoordinator()
     navigation.viewControllers = []
     authCoordinator = nil
+    startSomeCoordinator()
   }
 }
