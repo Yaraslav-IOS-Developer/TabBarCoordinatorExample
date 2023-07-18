@@ -17,4 +17,11 @@ struct AppFactory {
 
     return coordinator
   }
+
+  func makeMainTabBarCoordinator(navigation: UINavigationController) -> CoordinatorProtocol {
+    let factoryMainTabBar = MainTabBarFactory(appDIContainer: appDIContainer)
+    let coordinator = MainTabBarCoordinator(navigation: navigation, factory: factoryMainTabBar)
+
+    return coordinator
+  }
 }

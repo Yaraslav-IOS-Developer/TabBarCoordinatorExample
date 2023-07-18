@@ -14,8 +14,11 @@ protocol AuthCoordinatorDelegate: AnyObject {
 
 final class AuthCoordinator: CoordinatorProtocol {
   var navigation: UINavigationController
-  var factory: AuthFactory
+  
+  private let factory: AuthFactory
+
   weak var delegate: AuthCoordinatorDelegate?
+
 
   init(navigation: UINavigationController, factory: AuthFactory, delegate: AuthCoordinatorDelegate?) {
     self.navigation = navigation

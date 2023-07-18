@@ -13,6 +13,9 @@
 		C430BA6A2A65A70900642FE0 /* AuthFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA692A65A70900642FE0 /* AuthFactory.swift */; };
 		C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA6C2A65A83600642FE0 /* AuthCoordinator.swift */; };
 		C430BA712A65A9F700642FE0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA702A65A9F700642FE0 /* AuthViewModel.swift */; };
+		C44AD3B72A66A93800ECA9C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */; };
+		C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */; };
+		C44AD3BD2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */; };
 		C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CE87D2A5F0E2C00E43E63 /* AppDelegate.swift */; };
 		C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CE87F2A5F0E2C00E43E63 /* SceneDelegate.swift */; };
 		C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47CE8862A5F0E2E00E43E63 /* Assets.xcassets */; };
@@ -31,6 +34,9 @@
 		C430BA692A65A70900642FE0 /* AuthFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFactory.swift; sourceTree = "<group>"; };
 		C430BA6C2A65A83600642FE0 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		C430BA702A65A9F700642FE0 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFactory.swift; sourceTree = "<group>"; };
+		C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		C47CE87A2A5F0E2C00E43E63 /* TabBarCoordinatorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBarCoordinatorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47CE87D2A5F0E2C00E43E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C47CE87F2A5F0E2C00E43E63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,30 @@
 			path = AuthViewModel;
 			sourceTree = "<group>";
 		};
+		C44AD3B52A66A8E000ECA9C9 /* MainTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */,
+			);
+			path = MainTabBarController;
+			sourceTree = "<group>";
+		};
+		C44AD3B82A66A9A000ECA9C9 /* MainTabBarFactory */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */,
+			);
+			path = MainTabBarFactory;
+			sourceTree = "<group>";
+		};
+		C44AD3BB2A66AB1900ECA9C9 /* MainCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */,
+			);
+			path = MainCoordinator;
+			sourceTree = "<group>";
+		};
 		C47CE8712A5F0E2C00E43E63 = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				C430BA652A65A61900642FE0 /* AuthViewController */,
+				C44AD3B52A66A8E000ECA9C9 /* MainTabBarController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -158,6 +189,7 @@
 				C47CE89B2A5F135D00E43E63 /* CoordinatorProtocol */,
 				C47CE8952A5F124900E43E63 /* AppCoordinator */,
 				C430BA6B2A65A81200642FE0 /* AuthCoordinator */,
+				C44AD3BB2A66AB1900ECA9C9 /* MainCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -194,6 +226,7 @@
 				C4CBDD8C2A657C0A001D1F4E /* DI */,
 				C4CBDD862A6578C7001D1F4E /* AppFactory */,
 				C430BA682A65A6E100642FE0 /* AuthFactory */,
+				C44AD3B82A66A9A000ECA9C9 /* MainTabBarFactory */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -298,12 +331,15 @@
 				C4CBDD882A6578D1001D1F4E /* AppFactory.swift in Sources */,
 				C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */,
 				C430BA6A2A65A70900642FE0 /* AuthFactory.swift in Sources */,
+				C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */,
 				C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */,
 				C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */,
+				C44AD3B72A66A93800ECA9C9 /* MainTabBarController.swift in Sources */,
 				C47CE8972A5F127A00E43E63 /* CoordinatorProtocol.swift in Sources */,
 				C430BA712A65A9F700642FE0 /* AuthViewModel.swift in Sources */,
 				C430BA622A65A58500642FE0 /* AuthView.swift in Sources */,
 				C430BA672A65A63700642FE0 /* AuthViewController.swift in Sources */,
+				C44AD3BD2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift in Sources */,
 				C4CBDD8B2A65794E001D1F4E /* Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
