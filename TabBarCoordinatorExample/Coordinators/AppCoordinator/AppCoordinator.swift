@@ -50,7 +50,7 @@ final class AppCoordinator: CoordinatorProtocol {
   }
 
   private func startMainTabBarCoordinator() {
-    mainTabBarCoordinator = factory?.makeMainTabBarCoordinator(navigation: navigation)
+    mainTabBarCoordinator = factory?.makeMainTabBarCoordinator(navigation: navigation, delegate: self)
     mainTabBarCoordinator?.start()
   }
 }
@@ -59,6 +59,14 @@ extension AppCoordinator: AuthCoordinatorDelegate {
   func didFinishLogin() {
     navigation.viewControllers = []
     authCoordinator = nil
+    startSomeCoordinator()
+  }
+}
+
+extension AppCoordinator: MainTabBarCoordinatorDelegate {
+  func didFinish() {
+    navigation.viewControllers = []
+    mainTabBarCoordinator = nil
     startSomeCoordinator()
   }
 }

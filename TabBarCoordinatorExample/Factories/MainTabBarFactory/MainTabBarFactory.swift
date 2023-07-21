@@ -11,10 +11,16 @@ import UIKit
 struct MainTabBarFactory {
   let appDIContainer: AppDIContainer?
 
-  func makeMainTabBarController() -> UITabBarController {
+  func makeMainTabBarController() -> MainTabBarController {
     let mainTabBarController = MainTabBarController()
-    mainTabBarController.viewControllers = [UIViewController()]
-
     return mainTabBarController
+  }
+
+  func makeSettingsCoordinate(delegate: SettingsCoordinatorDelegate?) -> CoordinatorProtocol {
+    let factory = SettingsFactory(appDIContainer: appDIContainer)
+    let navigation = UINavigationController()
+    let coordinate = SettingsCoordinator(navigation: navigation, factory: factory, delegate: delegate)
+
+    return coordinate
   }
 }
