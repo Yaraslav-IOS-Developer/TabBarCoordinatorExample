@@ -25,5 +25,17 @@ struct SettingsFactory: ItemTabBarFactory {
       image: "gearshape.2",
       selectedImage: "gearshape.2.fill")
   }
+
+  func makeAccountViewController() -> UIViewController {
+    let accountViewController = AccountViewController()
+    accountViewController.title = "Account"
+    return accountViewController
+  }
+
+  func makeThemeViewController() -> UIViewController {
+    let themeViewController = ThemeViewController()
+    themeViewController.title = "Theme"
+    return themeViewController
+  }
 }
 

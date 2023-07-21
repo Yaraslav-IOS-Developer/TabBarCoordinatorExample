@@ -13,6 +13,12 @@
 		C430BA6A2A65A70900642FE0 /* AuthFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA692A65A70900642FE0 /* AuthFactory.swift */; };
 		C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA6C2A65A83600642FE0 /* AuthCoordinator.swift */; };
 		C430BA712A65A9F700642FE0 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA702A65A9F700642FE0 /* AuthViewModel.swift */; };
+		C430BA7B2A6ADB2100642FE0 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA7A2A6ADB2100642FE0 /* AccountView.swift */; };
+		C430BA7D2A6ADB6900642FE0 /* AccountView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C430BA7C2A6ADB6900642FE0 /* AccountView.xib */; };
+		C430BA7F2A6ADBB200642FE0 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA7E2A6ADBB200642FE0 /* AccountViewController.swift */; };
+		C430BA812A6ADE3A00642FE0 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA802A6ADE3A00642FE0 /* ThemeViewController.swift */; };
+		C430BA842A6ADE9A00642FE0 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA832A6ADE9A00642FE0 /* ThemeView.swift */; };
+		C430BA862A6ADEED00642FE0 /* ThemeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C430BA852A6ADEED00642FE0 /* ThemeView.xib */; };
 		C44AD3B72A66A93800ECA9C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */; };
 		C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */; };
 		C44AD3BD2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */; };
@@ -43,6 +49,12 @@
 		C430BA692A65A70900642FE0 /* AuthFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFactory.swift; sourceTree = "<group>"; };
 		C430BA6C2A65A83600642FE0 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		C430BA702A65A9F700642FE0 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C430BA7A2A6ADB2100642FE0 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		C430BA7C2A6ADB6900642FE0 /* AccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountView.xib; sourceTree = "<group>"; };
+		C430BA7E2A6ADBB200642FE0 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		C430BA802A6ADE3A00642FE0 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
+		C430BA832A6ADE9A00642FE0 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		C430BA852A6ADEED00642FE0 /* ThemeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeView.xib; sourceTree = "<group>"; };
 		C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFactory.swift; sourceTree = "<group>"; };
 		C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -127,6 +139,76 @@
 				C430BA702A65A9F700642FE0 /* AuthViewModel.swift */,
 			);
 			path = AuthViewModel;
+			sourceTree = "<group>";
+		};
+		C430BA722A6AD91600642FE0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3BE2A66B49900ECA9C9 /* SettingViewController */,
+				C430BA752A6ADA9600642FE0 /* AccountViewController */,
+				C430BA762A6ADAB200642FE0 /* ThemeViewController */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C430BA732A6AD92D00642FE0 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA652A65A61900642FE0 /* AuthViewController */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		C430BA742A6AD94600642FE0 /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3B52A66A8E000ECA9C9 /* MainTabBarController */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
+		C430BA752A6ADA9600642FE0 /* AccountViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA7E2A6ADBB200642FE0 /* AccountViewController.swift */,
+			);
+			path = AccountViewController;
+			sourceTree = "<group>";
+		};
+		C430BA762A6ADAB200642FE0 /* ThemeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA802A6ADE3A00642FE0 /* ThemeViewController.swift */,
+			);
+			path = ThemeViewController;
+			sourceTree = "<group>";
+		};
+		C430BA772A6ADADB00642FE0 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3BF2A66B4B600ECA9C9 /* SettingView */,
+				C430BA782A6ADAF100642FE0 /* AccountView */,
+				C430BA792A6ADB0100642FE0 /* ThemeView */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C430BA782A6ADAF100642FE0 /* AccountView */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA7A2A6ADB2100642FE0 /* AccountView.swift */,
+				C430BA7C2A6ADB6900642FE0 /* AccountView.xib */,
+			);
+			path = AccountView;
+			sourceTree = "<group>";
+		};
+		C430BA792A6ADB0100642FE0 /* ThemeView */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA832A6ADE9A00642FE0 /* ThemeView.swift */,
+				C430BA852A6ADEED00642FE0 /* ThemeView.xib */,
+			);
+			path = ThemeView;
 			sourceTree = "<group>";
 		};
 		C44AD3B52A66A8E000ECA9C9 /* MainTabBarController */ = {
@@ -249,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				C430BA602A65A56700642FE0 /* AuthView */,
-				C44AD3BF2A66B4B600ECA9C9 /* SettingView */,
+				C430BA772A6ADADB00642FE0 /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,9 +339,9 @@
 		C47CE8922A5F11E300E43E63 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C430BA652A65A61900642FE0 /* AuthViewController */,
-				C44AD3B52A66A8E000ECA9C9 /* MainTabBarController */,
-				C44AD3BE2A66B49900ECA9C9 /* SettingViewController */,
+				C430BA732A6AD92D00642FE0 /* Auth */,
+				C430BA742A6AD94600642FE0 /* MainTabBar */,
+				C430BA722A6AD91600642FE0 /* Settings */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -396,8 +478,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C430BA862A6ADEED00642FE0 /* ThemeView.xib in Resources */,
 				C47CE88A2A5F0E2E00E43E63 /* LaunchScreen.storyboard in Resources */,
 				C44AD3CD2A66BC1F00ECA9C9 /* SettingView.xib in Resources */,
+				C430BA7D2A6ADB6900642FE0 /* AccountView.xib in Resources */,
 				C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */,
 				C430BA642A65A5BA00642FE0 /* AuthView.xib in Resources */,
 			);
@@ -411,10 +495,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CBDD8E2A657C27001D1F4E /* AppDIContainer.swift in Sources */,
+				C430BA7F2A6ADBB200642FE0 /* AccountViewController.swift in Sources */,
+				C430BA812A6ADE3A00642FE0 /* ThemeViewController.swift in Sources */,
 				C44AD3CB2A66BC0700ECA9C9 /* SettingView.swift in Sources */,
 				C47CE89A2A5F130600E43E63 /* AppCoordinator.swift in Sources */,
 				C4CBDD882A6578D1001D1F4E /* AppFactory.swift in Sources */,
 				C44AD3D02A66C55000ECA9C9 /* SettingsCoordinator.swift in Sources */,
+				C430BA842A6ADE9A00642FE0 /* ThemeView.swift in Sources */,
 				C44AD3C52A66B66700ECA9C9 /* ItemSettingViewModel.swift in Sources */,
 				C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */,
 				C44AD3D42A66C5CA00ECA9C9 /* SettingsFactory.swift in Sources */,
@@ -422,6 +509,7 @@
 				C430BA6A2A65A70900642FE0 /* AuthFactory.swift in Sources */,
 				C44AD3D72A66D20100ECA9C9 /* ItemTabBarFactory.swift in Sources */,
 				C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */,
+				C430BA7B2A6ADB2100642FE0 /* AccountView.swift in Sources */,
 				C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */,
 				C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */,
 				C44AD3B72A66A93800ECA9C9 /* MainTabBarController.swift in Sources */,
