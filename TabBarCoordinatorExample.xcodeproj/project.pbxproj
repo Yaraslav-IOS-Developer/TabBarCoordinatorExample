@@ -16,6 +16,15 @@
 		C44AD3B72A66A93800ECA9C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */; };
 		C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */; };
 		C44AD3BD2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */; };
+		C44AD3C32A66B5C000ECA9C9 /* SettingsNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3C22A66B5C000ECA9C9 /* SettingsNavigation.swift */; };
+		C44AD3C52A66B66700ECA9C9 /* ItemSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3C42A66B66700ECA9C9 /* ItemSettingViewModel.swift */; };
+		C44AD3C72A66B70800ECA9C9 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3C62A66B70800ECA9C9 /* SettingsViewModel.swift */; };
+		C44AD3C92A66B73F00ECA9C9 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3C82A66B73F00ECA9C9 /* SettingViewController.swift */; };
+		C44AD3CB2A66BC0700ECA9C9 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3CA2A66BC0700ECA9C9 /* SettingView.swift */; };
+		C44AD3CD2A66BC1F00ECA9C9 /* SettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C44AD3CC2A66BC1F00ECA9C9 /* SettingView.xib */; };
+		C44AD3D02A66C55000ECA9C9 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3CF2A66C55000ECA9C9 /* SettingsCoordinator.swift */; };
+		C44AD3D42A66C5CA00ECA9C9 /* SettingsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3D32A66C5CA00ECA9C9 /* SettingsFactory.swift */; };
+		C44AD3D72A66D20100ECA9C9 /* ItemTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3D62A66D20100ECA9C9 /* ItemTabBarFactory.swift */; };
 		C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CE87D2A5F0E2C00E43E63 /* AppDelegate.swift */; };
 		C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CE87F2A5F0E2C00E43E63 /* SceneDelegate.swift */; };
 		C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C47CE8862A5F0E2E00E43E63 /* Assets.xcassets */; };
@@ -37,6 +46,15 @@
 		C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFactory.swift; sourceTree = "<group>"; };
 		C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
+		C44AD3C22A66B5C000ECA9C9 /* SettingsNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigation.swift; sourceTree = "<group>"; };
+		C44AD3C42A66B66700ECA9C9 /* ItemSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSettingViewModel.swift; sourceTree = "<group>"; };
+		C44AD3C62A66B70800ECA9C9 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		C44AD3C82A66B73F00ECA9C9 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		C44AD3CA2A66BC0700ECA9C9 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		C44AD3CC2A66BC1F00ECA9C9 /* SettingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingView.xib; sourceTree = "<group>"; };
+		C44AD3CF2A66C55000ECA9C9 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		C44AD3D32A66C5CA00ECA9C9 /* SettingsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFactory.swift; sourceTree = "<group>"; };
+		C44AD3D62A66D20100ECA9C9 /* ItemTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTabBarFactory.swift; sourceTree = "<group>"; };
 		C47CE87A2A5F0E2C00E43E63 /* TabBarCoordinatorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBarCoordinatorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C47CE87D2A5F0E2C00E43E63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C47CE87F2A5F0E2C00E43E63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -98,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				C430BA6F2A65A9D800642FE0 /* AuthViewModel */,
+				C44AD3C02A66B50900ECA9C9 /* SettingViewModels */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -122,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */,
+				C44AD3D52A66D1D000ECA9C9 /* ItemTabBarFactory */,
 			);
 			path = MainTabBarFactory;
 			sourceTree = "<group>";
@@ -132,6 +152,65 @@
 				C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */,
 			);
 			path = MainCoordinator;
+			sourceTree = "<group>";
+		};
+		C44AD3BE2A66B49900ECA9C9 /* SettingViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3C82A66B73F00ECA9C9 /* SettingViewController.swift */,
+			);
+			path = SettingViewController;
+			sourceTree = "<group>";
+		};
+		C44AD3BF2A66B4B600ECA9C9 /* SettingView */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3CA2A66BC0700ECA9C9 /* SettingView.swift */,
+				C44AD3CC2A66BC1F00ECA9C9 /* SettingView.xib */,
+			);
+			path = SettingView;
+			sourceTree = "<group>";
+		};
+		C44AD3C02A66B50900ECA9C9 /* SettingViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3C12A66B53800ECA9C9 /* ItemViewModels */,
+			);
+			path = SettingViewModels;
+			sourceTree = "<group>";
+		};
+		C44AD3C12A66B53800ECA9C9 /* ItemViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3C42A66B66700ECA9C9 /* ItemSettingViewModel.swift */,
+				C44AD3C22A66B5C000ECA9C9 /* SettingsNavigation.swift */,
+				C44AD3C62A66B70800ECA9C9 /* SettingsViewModel.swift */,
+			);
+			path = ItemViewModels;
+			sourceTree = "<group>";
+		};
+		C44AD3CE2A66C51B00ECA9C9 /* SettingsCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3CF2A66C55000ECA9C9 /* SettingsCoordinator.swift */,
+			);
+			path = SettingsCoordinator;
+			sourceTree = "<group>";
+		};
+		C44AD3D12A66C57900ECA9C9 /* SettingsFactory */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3D32A66C5CA00ECA9C9 /* SettingsFactory.swift */,
+			);
+			path = SettingsFactory;
+			sourceTree = "<group>";
+		};
+		C44AD3D52A66D1D000ECA9C9 /* ItemTabBarFactory */ = {
+			isa = PBXGroup;
+			children = (
+				C44AD3D62A66D20100ECA9C9 /* ItemTabBarFactory.swift */,
+			);
+			path = ItemTabBarFactory;
 			sourceTree = "<group>";
 		};
 		C47CE8712A5F0E2C00E43E63 = {
@@ -170,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				C430BA602A65A56700642FE0 /* AuthView */,
+				C44AD3BF2A66B4B600ECA9C9 /* SettingView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -179,6 +259,7 @@
 			children = (
 				C430BA652A65A61900642FE0 /* AuthViewController */,
 				C44AD3B52A66A8E000ECA9C9 /* MainTabBarController */,
+				C44AD3BE2A66B49900ECA9C9 /* SettingViewController */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -190,6 +271,7 @@
 				C47CE8952A5F124900E43E63 /* AppCoordinator */,
 				C430BA6B2A65A81200642FE0 /* AuthCoordinator */,
 				C44AD3BB2A66AB1900ECA9C9 /* MainCoordinator */,
+				C44AD3CE2A66C51B00ECA9C9 /* SettingsCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -227,6 +309,7 @@
 				C4CBDD862A6578C7001D1F4E /* AppFactory */,
 				C430BA682A65A6E100642FE0 /* AuthFactory */,
 				C44AD3B82A66A9A000ECA9C9 /* MainTabBarFactory */,
+				C44AD3D12A66C57900ECA9C9 /* SettingsFactory */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -314,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C47CE88A2A5F0E2E00E43E63 /* LaunchScreen.storyboard in Resources */,
+				C44AD3CD2A66BC1F00ECA9C9 /* SettingView.xib in Resources */,
 				C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */,
 				C430BA642A65A5BA00642FE0 /* AuthView.xib in Resources */,
 			);
@@ -327,10 +411,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4CBDD8E2A657C27001D1F4E /* AppDIContainer.swift in Sources */,
+				C44AD3CB2A66BC0700ECA9C9 /* SettingView.swift in Sources */,
 				C47CE89A2A5F130600E43E63 /* AppCoordinator.swift in Sources */,
 				C4CBDD882A6578D1001D1F4E /* AppFactory.swift in Sources */,
+				C44AD3D02A66C55000ECA9C9 /* SettingsCoordinator.swift in Sources */,
+				C44AD3C52A66B66700ECA9C9 /* ItemSettingViewModel.swift in Sources */,
 				C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */,
+				C44AD3D42A66C5CA00ECA9C9 /* SettingsFactory.swift in Sources */,
+				C44AD3C32A66B5C000ECA9C9 /* SettingsNavigation.swift in Sources */,
 				C430BA6A2A65A70900642FE0 /* AuthFactory.swift in Sources */,
+				C44AD3D72A66D20100ECA9C9 /* ItemTabBarFactory.swift in Sources */,
 				C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */,
 				C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */,
 				C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */,
@@ -340,7 +430,9 @@
 				C430BA622A65A58500642FE0 /* AuthView.swift in Sources */,
 				C430BA672A65A63700642FE0 /* AuthViewController.swift in Sources */,
 				C44AD3BD2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift in Sources */,
+				C44AD3C92A66B73F00ECA9C9 /* SettingViewController.swift in Sources */,
 				C4CBDD8B2A65794E001D1F4E /* Auth.swift in Sources */,
+				C44AD3C72A66B70800ECA9C9 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
