@@ -39,12 +39,16 @@ extension SettingsCoordinator: SettingViewControllerDelegate {
     switch settingsNavigation {
       case .userConfiguration:
         break
+
       case .account:
-        break
+        navigation.pushViewController(factory.makeAccountViewController(), animated: true)
+
       case .theme:
-        break
+        navigation.pushViewController(factory.makeThemeViewController(), animated: true)
+
       case .logOut:
         delegate?.didTapLogOut()
+        
       case .noNavigation:
         break
     }
