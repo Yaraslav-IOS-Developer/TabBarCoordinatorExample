@@ -19,6 +19,11 @@
 		C430BA812A6ADE3A00642FE0 /* ThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA802A6ADE3A00642FE0 /* ThemeViewController.swift */; };
 		C430BA842A6ADE9A00642FE0 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA832A6ADE9A00642FE0 /* ThemeView.swift */; };
 		C430BA862A6ADEED00642FE0 /* ThemeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C430BA852A6ADEED00642FE0 /* ThemeView.xib */; };
+		C430BA8D2A6AE3B300642FE0 /* CommunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA8C2A6AE3B300642FE0 /* CommunitiesViewController.swift */; };
+		C430BA912A6AE3F000642FE0 /* CommunitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA902A6AE3F000642FE0 /* CommunitiesView.swift */; };
+		C430BA932A6AE40C00642FE0 /* CommunitiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C430BA922A6AE40C00642FE0 /* CommunitiesView.xib */; };
+		C430BA962A6AE5A200642FE0 /* CommunitiesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA952A6AE5A200642FE0 /* CommunitiesFactory.swift */; };
+		C430BA982A6AE72C00642FE0 /* CommunitiesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C430BA972A6AE72C00642FE0 /* CommunitiesCoordinator.swift */; };
 		C44AD3B72A66A93800ECA9C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */; };
 		C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */; };
 		C44AD3BD2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */; };
@@ -55,6 +60,11 @@
 		C430BA802A6ADE3A00642FE0 /* ThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewController.swift; sourceTree = "<group>"; };
 		C430BA832A6ADE9A00642FE0 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		C430BA852A6ADEED00642FE0 /* ThemeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThemeView.xib; sourceTree = "<group>"; };
+		C430BA8C2A6AE3B300642FE0 /* CommunitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesViewController.swift; sourceTree = "<group>"; };
+		C430BA902A6AE3F000642FE0 /* CommunitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesView.swift; sourceTree = "<group>"; };
+		C430BA922A6AE40C00642FE0 /* CommunitiesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommunitiesView.xib; sourceTree = "<group>"; };
+		C430BA952A6AE5A200642FE0 /* CommunitiesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesFactory.swift; sourceTree = "<group>"; };
+		C430BA972A6AE72C00642FE0 /* CommunitiesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunitiesCoordinator.swift; sourceTree = "<group>"; };
 		C44AD3B62A66A93800ECA9C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		C44AD3B92A66A9E400ECA9C9 /* MainTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarFactory.swift; sourceTree = "<group>"; };
 		C44AD3BC2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
@@ -211,6 +221,55 @@
 			path = ThemeView;
 			sourceTree = "<group>";
 		};
+		C430BA872A6AE2FC00642FE0 /* CommunitiesCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA972A6AE72C00642FE0 /* CommunitiesCoordinator.swift */,
+			);
+			path = CommunitiesCoordinator;
+			sourceTree = "<group>";
+		};
+		C430BA882A6AE36100642FE0 /* Communities */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA892A6AE37D00642FE0 /* CommunitiesViewController */,
+			);
+			path = Communities;
+			sourceTree = "<group>";
+		};
+		C430BA892A6AE37D00642FE0 /* CommunitiesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA8C2A6AE3B300642FE0 /* CommunitiesViewController.swift */,
+			);
+			path = CommunitiesViewController;
+			sourceTree = "<group>";
+		};
+		C430BA8E2A6AE3D100642FE0 /* Communities */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA8F2A6AE3E000642FE0 /* CommunitiesView */,
+			);
+			path = Communities;
+			sourceTree = "<group>";
+		};
+		C430BA8F2A6AE3E000642FE0 /* CommunitiesView */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA902A6AE3F000642FE0 /* CommunitiesView.swift */,
+				C430BA922A6AE40C00642FE0 /* CommunitiesView.xib */,
+			);
+			path = CommunitiesView;
+			sourceTree = "<group>";
+		};
+		C430BA942A6AE57100642FE0 /* CommunitiesFactory */ = {
+			isa = PBXGroup;
+			children = (
+				C430BA952A6AE5A200642FE0 /* CommunitiesFactory.swift */,
+			);
+			path = CommunitiesFactory;
+			sourceTree = "<group>";
+		};
 		C44AD3B52A66A8E000ECA9C9 /* MainTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				C430BA602A65A56700642FE0 /* AuthView */,
+				C430BA8E2A6AE3D100642FE0 /* Communities */,
 				C430BA772A6ADADB00642FE0 /* Settings */,
 			);
 			path = Views;
@@ -341,6 +401,7 @@
 			children = (
 				C430BA732A6AD92D00642FE0 /* Auth */,
 				C430BA742A6AD94600642FE0 /* MainTabBar */,
+				C430BA882A6AE36100642FE0 /* Communities */,
 				C430BA722A6AD91600642FE0 /* Settings */,
 			);
 			path = Controllers;
@@ -353,6 +414,7 @@
 				C47CE8952A5F124900E43E63 /* AppCoordinator */,
 				C430BA6B2A65A81200642FE0 /* AuthCoordinator */,
 				C44AD3BB2A66AB1900ECA9C9 /* MainCoordinator */,
+				C430BA872A6AE2FC00642FE0 /* CommunitiesCoordinator */,
 				C44AD3CE2A66C51B00ECA9C9 /* SettingsCoordinator */,
 			);
 			path = Coordinators;
@@ -391,6 +453,7 @@
 				C4CBDD862A6578C7001D1F4E /* AppFactory */,
 				C430BA682A65A6E100642FE0 /* AuthFactory */,
 				C44AD3B82A66A9A000ECA9C9 /* MainTabBarFactory */,
+				C430BA942A6AE57100642FE0 /* CommunitiesFactory */,
 				C44AD3D12A66C57900ECA9C9 /* SettingsFactory */,
 			);
 			path = Factories;
@@ -481,6 +544,7 @@
 				C430BA862A6ADEED00642FE0 /* ThemeView.xib in Resources */,
 				C47CE88A2A5F0E2E00E43E63 /* LaunchScreen.storyboard in Resources */,
 				C44AD3CD2A66BC1F00ECA9C9 /* SettingView.xib in Resources */,
+				C430BA932A6AE40C00642FE0 /* CommunitiesView.xib in Resources */,
 				C430BA7D2A6ADB6900642FE0 /* AccountView.xib in Resources */,
 				C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */,
 				C430BA642A65A5BA00642FE0 /* AuthView.xib in Resources */,
@@ -502,6 +566,7 @@
 				C4CBDD882A6578D1001D1F4E /* AppFactory.swift in Sources */,
 				C44AD3D02A66C55000ECA9C9 /* SettingsCoordinator.swift in Sources */,
 				C430BA842A6ADE9A00642FE0 /* ThemeView.swift in Sources */,
+				C430BA912A6AE3F000642FE0 /* CommunitiesView.swift in Sources */,
 				C44AD3C52A66B66700ECA9C9 /* ItemSettingViewModel.swift in Sources */,
 				C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */,
 				C44AD3D42A66C5CA00ECA9C9 /* SettingsFactory.swift in Sources */,
@@ -511,11 +576,14 @@
 				C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */,
 				C430BA7B2A6ADB2100642FE0 /* AccountView.swift in Sources */,
 				C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */,
+				C430BA962A6AE5A200642FE0 /* CommunitiesFactory.swift in Sources */,
 				C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */,
+				C430BA982A6AE72C00642FE0 /* CommunitiesCoordinator.swift in Sources */,
 				C44AD3B72A66A93800ECA9C9 /* MainTabBarController.swift in Sources */,
 				C47CE8972A5F127A00E43E63 /* CoordinatorProtocol.swift in Sources */,
 				C430BA712A65A9F700642FE0 /* AuthViewModel.swift in Sources */,
 				C430BA622A65A58500642FE0 /* AuthView.swift in Sources */,
+				C430BA8D2A6AE3B300642FE0 /* CommunitiesViewController.swift in Sources */,
 				C430BA672A65A63700642FE0 /* AuthViewController.swift in Sources */,
 				C44AD3BD2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift in Sources */,
 				C44AD3C92A66B73F00ECA9C9 /* SettingViewController.swift in Sources */,

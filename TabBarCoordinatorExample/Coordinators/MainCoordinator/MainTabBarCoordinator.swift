@@ -12,8 +12,9 @@ protocol MainTabBarCoordinatorDelegate: AnyObject {
 }
 
 final class MainTabBarCoordinator: CoordinatorProtocol {
-  private var settingsCoordinator: CoordinatorProtocol?
   var navigation: UINavigationController
+  var childCoordinators: [CoordinatorProtocol] = []
+  private var settingsCoordinator: CoordinatorProtocol?
   private let factory: MainTabBarFactory
 
   private weak var delegate: MainTabBarCoordinatorDelegate?
@@ -32,16 +33,17 @@ final class MainTabBarCoordinator: CoordinatorProtocol {
     let navigationTabBar = factory.makeMainTabBarController()
     navigation.pushViewController(navigationTabBar, animated: false)
     navigation.navigationBar.isHidden = true
-    
-    settingsCoordinator = factory.makeSettingsCoordinate(delegate: self)
-    guard let settingsCoordinator = settingsCoordinator else { return }
-    navigationTabBar.viewControllers = [settingsCoordinator.navigation]
-    settingsCoordinator.start()
+
+    childCoordinators = factory.makeChildCoordinators(delegate: self)
+    let childNavigation = childCoordinators.map { $0.navigation }
+    childCoordinators.forEach { $0.start() }
+    navigationTabBar.viewControllers = childNavigation
   }
 }
 
 extension MainTabBarCoordinator: SettingsCoordinatorDelegate {
   func didTapLogOut() {
+    childCoordinators = []
     delegate?.didFinish()
   }
 }
