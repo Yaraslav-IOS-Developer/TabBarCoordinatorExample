@@ -35,12 +35,13 @@ final class SettingsViewModel {
       isNavigation: false,
       navigation: .noNavigation)
   ]
-  private let  auth: AuthLogOut?
 
   var settingCount: Int {
     return itemSettingsViewModel.count
   }
 
+  private let  auth: AuthLogOut?
+  
   init(auth: AuthLogOut?) {
     self.auth = auth
   }
