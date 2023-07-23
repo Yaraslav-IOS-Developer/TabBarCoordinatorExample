@@ -17,24 +17,42 @@ struct MainTabBarFactory {
   }
 
   func makeChildCoordinators(delegate: SettingsCoordinatorDelegate?) -> [CoordinatorProtocol] {
-    let communitiesCoordinate = makeCommunitiesCoordinate()
-    let settingsCoordinate = makeSettingsCoordinate(delegate: delegate)
-    return [communitiesCoordinate,settingsCoordinate]
+    let communitiesCoordinator = makeCommunitiesCoordinator()
+    let postCoordinator = makePostCoordinator()
+    let settingsCoordinator = makeSettingsCoordinator(delegate: delegate)
+    return [communitiesCoordinator, postCoordinator, settingsCoordinator]
   }
 
-  private func makeCommunitiesCoordinate() -> CoordinatorProtocol {
+  private func makeCommunitiesCoordinator() -> CoordinatorProtocol {
     let factory = CommunitiesFactoryImp(appDIContainer: appDIContainer)
     let navigation = UINavigationController()
-    let coordinate = CommunitiesCoordinator(navigation: navigation, factory: factory)
+    let coordinator = CommunitiesCoordinator(navigation: navigation, factory: factory)
 
-    return coordinate
+    return coordinator
   }
 
-  private func makeSettingsCoordinate(delegate: SettingsCoordinatorDelegate?) -> CoordinatorProtocol {
+  private func makePostCoordinator() -> CoordinatorProtocol {
+    let factory = MyPostsFactoryImp()
+    let navigation = UINavigationController()
+    let mediator = MyPostsMediatorImp()
+    let newPostView = NewPostView()
+    let myPostView = MyPostsView()
+    let coordinator = PostCoordinator(
+      navigation: navigation,
+      newPostView: newPostView,
+      myPostView: myPostView,
+      factory: factory,
+      myPostsMediator: mediator
+    )
+    
+    return coordinator
+  }
+
+  private func makeSettingsCoordinator(delegate: SettingsCoordinatorDelegate?) -> CoordinatorProtocol {
     let factory = SettingsFactory(appDIContainer: appDIContainer)
     let navigation = UINavigationController()
-    let coordinate = SettingsCoordinator(navigation: navigation, factory: factory, delegate: delegate)
+    let coordinator = SettingsCoordinator(navigation: navigation, factory: factory, delegate: delegate)
 
-    return coordinate
+    return coordinator
   }
 }
