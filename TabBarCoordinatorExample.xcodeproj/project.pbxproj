@@ -54,6 +54,11 @@
 		C4CBDD882A6578D1001D1F4E /* AppFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CBDD872A6578D1001D1F4E /* AppFactory.swift */; };
 		C4CBDD8B2A65794E001D1F4E /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CBDD8A2A65794E001D1F4E /* Auth.swift */; };
 		C4CBDD8E2A657C27001D1F4E /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4CBDD8D2A657C27001D1F4E /* AppDIContainer.swift */; };
+		C4EB27522A70409B0064C9FE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EB27512A70409B0064C9FE /* HomeViewController.swift */; };
+		C4EB27562A7040FE0064C9FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EB27552A7040FE0064C9FE /* HomeView.swift */; };
+		C4EB27582A70419F0064C9FE /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4EB27572A70419F0064C9FE /* HomeView.xib */; };
+		C4EB275B2A7045190064C9FE /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EB275A2A7045190064C9FE /* HomeCoordinator.swift */; };
+		C4EB275E2A7045B00064C9FE /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4EB275D2A7045B00064C9FE /* HomeFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +111,11 @@
 		C4CBDD872A6578D1001D1F4E /* AppFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFactory.swift; sourceTree = "<group>"; };
 		C4CBDD8A2A65794E001D1F4E /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		C4CBDD8D2A657C27001D1F4E /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		C4EB27512A70409B0064C9FE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C4EB27552A7040FE0064C9FE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C4EB27572A70419F0064C9FE /* HomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
+		C4EB275A2A7045190064C9FE /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		C4EB275D2A7045B00064C9FE /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +443,7 @@
 			isa = PBXGroup;
 			children = (
 				C430BA602A65A56700642FE0 /* AuthView */,
+				C4EB27532A7040BE0064C9FE /* Home */,
 				C430BA8E2A6AE3D100642FE0 /* Communities */,
 				C4C8CD6C2A6D1BB800064C22 /* Post */,
 				C430BA772A6ADADB00642FE0 /* Settings */,
@@ -445,6 +456,7 @@
 			children = (
 				C430BA732A6AD92D00642FE0 /* Auth */,
 				C430BA742A6AD94600642FE0 /* MainTabBar */,
+				C4EB27502A70407E0064C9FE /* Home */,
 				C430BA882A6AE36100642FE0 /* Communities */,
 				C4C8CD6A2A6D1B9600064C22 /* Posts */,
 				C430BA722A6AD91600642FE0 /* Settings */,
@@ -459,6 +471,7 @@
 				C47CE8952A5F124900E43E63 /* AppCoordinator */,
 				C430BA6B2A65A81200642FE0 /* AuthCoordinator */,
 				C44AD3BB2A66AB1900ECA9C9 /* MainCoordinator */,
+				C4EB27592A7044CC0064C9FE /* HomeCoordinator */,
 				C430BA872A6AE2FC00642FE0 /* CommunitiesCoordinator */,
 				C46FD8272A6D28A1003DF458 /* PostCoordinator */,
 				C44AD3CE2A66C51B00ECA9C9 /* SettingsCoordinator */,
@@ -543,6 +556,7 @@
 				C4CBDD862A6578C7001D1F4E /* AppFactory */,
 				C430BA682A65A6E100642FE0 /* AuthFactory */,
 				C44AD3B82A66A9A000ECA9C9 /* MainTabBarFactory */,
+				C4EB275C2A70458E0064C9FE /* HomeFactory */,
 				C430BA942A6AE57100642FE0 /* CommunitiesFactory */,
 				C4C8CD672A6D1B0600064C22 /* MyPostsFactory */,
 				C44AD3D12A66C57900ECA9C9 /* SettingsFactory */,
@@ -572,6 +586,47 @@
 				C4CBDD8D2A657C27001D1F4E /* AppDIContainer.swift */,
 			);
 			path = DI;
+			sourceTree = "<group>";
+		};
+		C4EB27502A70407E0064C9FE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C4EB27512A70409B0064C9FE /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C4EB27532A7040BE0064C9FE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C4EB27542A7040ED0064C9FE /* HomeView */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C4EB27542A7040ED0064C9FE /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				C4EB27552A7040FE0064C9FE /* HomeView.swift */,
+				C4EB27572A70419F0064C9FE /* HomeView.xib */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		C4EB27592A7044CC0064C9FE /* HomeCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C4EB275A2A7045190064C9FE /* HomeCoordinator.swift */,
+			);
+			path = HomeCoordinator;
+			sourceTree = "<group>";
+		};
+		C4EB275C2A70458E0064C9FE /* HomeFactory */ = {
+			isa = PBXGroup;
+			children = (
+				C4EB275D2A7045B00064C9FE /* HomeFactory.swift */,
+			);
+			path = HomeFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -641,6 +696,7 @@
 				C430BA7D2A6ADB6900642FE0 /* AccountView.xib in Resources */,
 				C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */,
 				C430BA642A65A5BA00642FE0 /* AuthView.xib in Resources */,
+				C4EB27582A70419F0064C9FE /* HomeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,7 +718,9 @@
 				C44AD3D02A66C55000ECA9C9 /* SettingsCoordinator.swift in Sources */,
 				C430BA842A6ADE9A00642FE0 /* ThemeView.swift in Sources */,
 				C430BA912A6AE3F000642FE0 /* CommunitiesView.swift in Sources */,
+				C4EB27522A70409B0064C9FE /* HomeViewController.swift in Sources */,
 				C44AD3C52A66B66700ECA9C9 /* ItemSettingViewModel.swift in Sources */,
+				C4EB27562A7040FE0064C9FE /* HomeView.swift in Sources */,
 				C430BAA02A6D101700642FE0 /* MyPostsViewController.swift in Sources */,
 				C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */,
 				C44AD3D42A66C5CA00ECA9C9 /* SettingsFactory.swift in Sources */,
@@ -672,6 +730,7 @@
 				C44AD3BA2A66A9E400ECA9C9 /* MainTabBarFactory.swift in Sources */,
 				C430BA7B2A6ADB2100642FE0 /* AccountView.swift in Sources */,
 				C47CE8802A5F0E2C00E43E63 /* SceneDelegate.swift in Sources */,
+				C4EB275E2A7045B00064C9FE /* HomeFactory.swift in Sources */,
 				C46FD8292A6D28DB003DF458 /* PostCoordinator.swift in Sources */,
 				C430BA962A6AE5A200642FE0 /* CommunitiesFactory.swift in Sources */,
 				C430BA6D2A65A83600642FE0 /* AuthCoordinator.swift in Sources */,
@@ -686,6 +745,7 @@
 				C44AD3BD2A66AB3600ECA9C9 /* MainTabBarCoordinator.swift in Sources */,
 				C44AD3C92A66B73F00ECA9C9 /* SettingViewController.swift in Sources */,
 				C4CBDD8B2A65794E001D1F4E /* Auth.swift in Sources */,
+				C4EB275B2A7045190064C9FE /* HomeCoordinator.swift in Sources */,
 				C4C8CD6F2A6D1BDA00064C22 /* NewPostView.swift in Sources */,
 				C4C8CD692A6D1B5500064C22 /* MyPostsFactory.swift in Sources */,
 				C44AD3C72A66B70800ECA9C9 /* SettingsViewModel.swift in Sources */,
