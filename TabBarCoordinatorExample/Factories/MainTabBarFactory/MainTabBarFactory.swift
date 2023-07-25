@@ -17,10 +17,25 @@ struct MainTabBarFactory {
   }
 
   func makeChildCoordinators(delegate: SettingsCoordinatorDelegate?) -> [CoordinatorProtocol] {
+    let homeCoordinator = makeHomeCoordinator()
     let communitiesCoordinator = makeCommunitiesCoordinator()
     let postCoordinator = makePostCoordinator()
     let settingsCoordinator = makeSettingsCoordinator(delegate: delegate)
-    return [communitiesCoordinator, postCoordinator, settingsCoordinator]
+    
+    return [
+      homeCoordinator,
+      communitiesCoordinator,
+      postCoordinator,
+      settingsCoordinator
+    ]
+  }
+
+  private func makeHomeCoordinator() -> CoordinatorProtocol {
+    let factory = HomeFactoryImp()
+    let navigation = UINavigationController()
+    let coordinator = HomeCoordinator(navigation: navigation, factory: factory)
+
+    return coordinator
   }
 
   private func makeCommunitiesCoordinator() -> CoordinatorProtocol {
