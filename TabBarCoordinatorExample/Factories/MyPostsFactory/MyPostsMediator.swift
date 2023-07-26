@@ -8,11 +8,11 @@
 import UIKit
 
 protocol MyPostsMediator {
-  func updateController(title: String, navigation: UINavigationController)
+  func updateController(title: String, navigation: NavigationPortocol)
 }
 struct MyPostsMediatorImp: MyPostsMediator {
-  func updateController(title: String, navigation: UINavigationController) {
-    guard let myPostViewController = navigation.topViewController as? MyPostsViewController else { return }
+  func updateController(title: String, navigation: NavigationPortocol) {
+    guard let myPostViewController = navigation.rootViewController.topViewController as? MyPostsViewController else { return }
 
     myPostViewController.updateLabel(title: title)
   }

@@ -8,8 +8,9 @@
 import UIKit
 
 protocol HomeFactory {
-  func makeTabBarItem(navigation: UINavigationController)
+  func makeTabBarItem(navigation: NavigationPortocol)
   func makeHomeViewController(coordinator: HomeViewControllerCoordinator?) -> UIViewController
+  func makePostDetailsCoordinator(navigation: NavigationPortocol, id: Int, parentCoordinator: ParentCoordinator?) -> CoordinatorProtocol
 }
 
 struct HomeFactoryImp: HomeFactory {
@@ -23,12 +24,27 @@ struct HomeFactoryImp: HomeFactory {
     return homeViewController
   }
 
-  func makeTabBarItem(navigation: UINavigationController) {
+  func makeTabBarItem(navigation: NavigationPortocol) {
     makeItemTabBar(
       navigation: navigation,
       title: "Home",
       image: "house",
       selectedImage: "house.fill")
+  }
+
+  func makePostDetailsCoordinator(
+    navigation: NavigationPortocol,
+    id: Int,
+    parentCoordinator: ParentCoordinator?
+  ) -> CoordinatorProtocol {
+    let factory = PostDetailFactory(id: id)
+    let coordinator = PostDetailCoordinator(
+      navigation: navigation,
+      factory: factory,
+      parentCoordinator: parentCoordinator
+    )
+
+    return coordinator
   }
 }
 

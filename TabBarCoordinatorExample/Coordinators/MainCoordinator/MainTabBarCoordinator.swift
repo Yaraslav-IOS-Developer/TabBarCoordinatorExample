@@ -12,7 +12,7 @@ protocol MainTabBarCoordinatorDelegate: AnyObject {
 }
 
 final class MainTabBarCoordinator: CoordinatorProtocol {
-  var navigation: UINavigationController
+  var navigation: NavigationPortocol
   var childCoordinators: [CoordinatorProtocol] = []
   private var settingsCoordinator: CoordinatorProtocol?
   private let factory: MainTabBarFactory
@@ -20,7 +20,7 @@ final class MainTabBarCoordinator: CoordinatorProtocol {
   private weak var delegate: MainTabBarCoordinatorDelegate?
 
   init(
-    navigation: UINavigationController,
+    navigation: NavigationPortocol,
     factory: MainTabBarFactory,
     delegate: MainTabBarCoordinatorDelegate?
   ) {
@@ -31,11 +31,11 @@ final class MainTabBarCoordinator: CoordinatorProtocol {
 
   func start() {
     let navigationTabBar = factory.makeMainTabBarController()
-    navigation.pushViewController(navigationTabBar, animated: false)
+    navigation.pushViewController(navigationTabBar, animate: false)
     navigation.navigationBar.isHidden = true
 
     childCoordinators = factory.makeChildCoordinators(delegate: self)
-    let childNavigation = childCoordinators.map { $0.navigation }
+    let childNavigation = childCoordinators.map { $0.navigation.rootViewController }
     childCoordinators.forEach { $0.start() }
     navigationTabBar.viewControllers = childNavigation
   }

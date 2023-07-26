@@ -12,12 +12,12 @@ protocol SettingsCoordinatorDelegate: AnyObject {
 }
 
 final class SettingsCoordinator: CoordinatorProtocol {
-  var navigation: UINavigationController
+  var navigation: NavigationPortocol
   private let factory: SettingsFactory
   private weak var delegate: SettingsCoordinatorDelegate?
 
   init(
-    navigation: UINavigationController,
+    navigation: NavigationPortocol,
     factory: SettingsFactory,
     delegate: SettingsCoordinatorDelegate?
   ) {
@@ -29,7 +29,7 @@ final class SettingsCoordinator: CoordinatorProtocol {
   func start() {
     let controller = factory.makeSettingsViewController(settingViewControllerDelegate: self)
     navigation.navigationBar.prefersLargeTitles = true
-    navigation.pushViewController(controller, animated: true)
+    navigation.pushViewController(controller, animate: true)
     factory.makeTabBarItem(navigation: navigation)
   }
 }
@@ -41,10 +41,10 @@ extension SettingsCoordinator: SettingViewControllerDelegate {
         break
 
       case .account:
-        navigation.pushViewController(factory.makeAccountViewController(), animated: true)
+        navigation.pushViewController(factory.makeAccountViewController(), animate: true)
 
       case .theme:
-        navigation.pushViewController(factory.makeThemeViewController(), animated: true)
+        navigation.pushViewController(factory.makeThemeViewController(), animate: true)
 
       case .logOut:
         delegate?.didTapLogOut()

@@ -15,10 +15,10 @@ final class AppCoordinator: CoordinatorProtocol {
   private var factory: AppFactory?
   private var auth: SessionCheckerAuth?
 
-  var navigation: UINavigationController
+  var navigation: NavigationPortocol
   var window: UIWindow?
 
-  init(navigation: UINavigationController, window: UIWindow, factory: AppFactory?, auth: Auth?) {
+  init(navigation: NavigationPortocol, window: UIWindow, factory: AppFactory?, auth: Auth?) {
     self.navigation = navigation
     self.window = window
     self.factory = factory
@@ -31,7 +31,7 @@ final class AppCoordinator: CoordinatorProtocol {
   }
 
   private func configureWindow() {
-    window?.rootViewController = navigation
+    window?.rootViewController = navigation.rootViewController
     window?.makeKeyAndVisible()
   }
 
@@ -57,7 +57,7 @@ final class AppCoordinator: CoordinatorProtocol {
 
 extension AppCoordinator: AuthCoordinatorDelegate {
   func didFinishLogin() {
-    navigation.viewControllers = []
+    navigation.rootViewController.viewControllers = []
     authCoordinator = nil
     startSomeCoordinator()
   }
@@ -65,7 +65,7 @@ extension AppCoordinator: AuthCoordinatorDelegate {
 
 extension AppCoordinator: MainTabBarCoordinatorDelegate {
   func didFinish() {
-    navigation.viewControllers = []
+    navigation.rootViewController.viewControllers = []
     mainTabBarCoordinator = nil
     startSomeCoordinator()
   }

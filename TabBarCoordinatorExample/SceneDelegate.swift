@@ -20,7 +20,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     appDIContainer = AppDIContainer()
     appFactory = AppFactory(appDIContainer: appDIContainer)
-    appCoordinator = AppCoordinator(navigation: UINavigationController(), window: window, factory: appFactory, auth: appDIContainer?.auth)
+    appCoordinator = AppCoordinator(
+      navigation: NavigationImp(rootViewController: UINavigationController()),
+      window: window,
+      factory: appFactory,
+      auth: appDIContainer?.auth
+    )
 
     appCoordinator?.start()
   }

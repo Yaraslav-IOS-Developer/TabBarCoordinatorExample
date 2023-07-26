@@ -26,7 +26,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Save"/>
                     <connections>
-                        <action selector="saveButtonTapped:" destination="-1" eventType="touchUpInside" id="Shu-O6-mrG"/>
+                        <action selector="saveButtonTapped" destination="-1" eventType="touchUpInside" id="6Qx-Dk-lFK"/>
                     </connections>
                 </button>
             </subviews>

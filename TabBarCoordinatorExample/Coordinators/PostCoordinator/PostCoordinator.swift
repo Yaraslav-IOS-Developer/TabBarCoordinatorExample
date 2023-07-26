@@ -8,12 +8,13 @@
 import UIKit
 
 final class PostCoordinator: CoordinatorProtocol {
-  var navigation: UINavigationController
+  var navigation: NavigationPortocol
+  var childCoordinators: [CoordinatorProtocol] = []
   private let factory: MyPostsFactory
   private let myPostsMediator: MyPostsMediator
 
   init(
-    navigation: UINavigationController,
+    navigation: NavigationPortocol,
     newPostView: NewPostView,
     myPostView: MyPostsView,
     factory: MyPostsFactory,
@@ -27,26 +28,28 @@ final class PostCoordinator: CoordinatorProtocol {
   func start() {
     let myPostViewController = factory.makeMyPostsViewController(coordinator: self)
     navigation.navigationBar.prefersLargeTitles = true
-    navigation.pushViewController(myPostViewController, animated: true)
+    navigation.pushViewController(myPostViewController, animate: true)
     factory.makeTabBarItem(navigation: navigation)
-
   }
 }
 
 extension PostCoordinator: MyPostsViewControllerDelegate {
   func didSelectPost(id: Int) {
-    
+    let postDetailCoordinator = factory.makePostDetailsCoordinator(navigation: navigation, id: id, parentCoordinator: self)
+    addChildCoordinator(postDetailCoordinator)
   }
 
   func didTapAddNewPostButton() {
     let newPostViewController = factory.makeNewPostViewController(coordinator: self)
-    navigation.present(newPostViewController, animated: true)
+    navigation.present(newPostViewController, animate: true)
   }
 }
 
 extension PostCoordinator: NewPostViewControllerCoordinator  {
   func didSaveNewPost(title: String) {
-    navigation.dismiss(animated: true)
+    navigation.dismiss(animate: true)
     myPostsMediator.updateController(title: title, navigation: navigation)
   }
 }
+
+extension PostCoordinator: ParentCoordinator { }

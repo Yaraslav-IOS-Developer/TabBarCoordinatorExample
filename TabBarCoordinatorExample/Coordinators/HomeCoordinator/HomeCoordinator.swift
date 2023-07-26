@@ -9,10 +9,11 @@ import UIKit
 
 
 final class HomeCoordinator: CoordinatorProtocol {
-  var navigation: UINavigationController
+  var navigation: NavigationPortocol
+  var childCoordinators: [CoordinatorProtocol] = []
   private let factory: HomeFactory
 
-  init(navigation: UINavigationController, factory: HomeFactory) {
+  init(navigation: NavigationPortocol, factory: HomeFactory) {
     self.navigation = navigation
     self.factory = factory
   }
@@ -20,13 +21,16 @@ final class HomeCoordinator: CoordinatorProtocol {
   func start() {
     let homeViewController = factory.makeHomeViewController(coordinator: self)
     navigation.navigationBar.prefersLargeTitles = true
-    navigation.pushViewController(homeViewController, animated: true)
+    navigation.pushViewController(homeViewController, animate: true)
     factory.makeTabBarItem(navigation: navigation)
   }
 }
 
 extension HomeCoordinator: HomeViewControllerCoordinator {
   func didSelectPost(id: Int) {
-    //PostDetail
+   let postDetailsCoordinator = factory.makePostDetailsCoordinator(navigation: navigation, id: id, parentCoordinator: self)
+    addChildCoordinator(postDetailsCoordinator)
   }
 }
+
+extension HomeCoordinator: ParentCoordinator { }

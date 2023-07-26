@@ -8,10 +8,10 @@
 import UIKit
 
 final class CommunitiesCoordinator: CoordinatorProtocol {
-  var navigation: UINavigationController
+  var navigation: NavigationPortocol
   private let factory: CommunitiesFactory
 
-  init(navigation: UINavigationController, factory: CommunitiesFactory) {
+  init(navigation: NavigationPortocol, factory: CommunitiesFactory) {
     self.navigation = navigation
     self.factory = factory
   }
@@ -19,7 +19,7 @@ final class CommunitiesCoordinator: CoordinatorProtocol {
   func start() {
     let communitiesViewController = factory.makeCommunitiesViewController()
     navigation.navigationBar.prefersLargeTitles = true
-    navigation.pushViewController(communitiesViewController, animated: true)
+    navigation.pushViewController(communitiesViewController, animate: true)
 
     factory.makeTabBarItem(navigation: navigation)
   }
