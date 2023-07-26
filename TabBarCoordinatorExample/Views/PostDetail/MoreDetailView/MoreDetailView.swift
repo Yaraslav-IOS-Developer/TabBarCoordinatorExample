@@ -1,25 +1,18 @@
 //
-//  NewPost.swift
+//  MoreDetailView.swift
 //  TabBarCoordinatorExample
 //
-//  Created by Yaroslav on 23.07.23.
+//  Created by Yaroslav on 26.07.23.
 //
 
 import UIKit
 
-protocol NewPostViewProtocol: AnyObject {
-  var contentView: UIView! { get set }
-  var saveButton: UIButton! { get set }
-  var onSaveButton: (() -> Void)? { get set }
-
-  func saveButtonTapped()
+protocol MoreDetailProtocol: AnyObject {
+  var contentView: UIView! { get set}
 }
 
-final class NewPostView: UIView, NewPostViewProtocol {
+final class MoreDetailView: UIView, MoreDetailProtocol {
   @IBOutlet weak var contentView: UIView!
-  @IBOutlet weak var saveButton: UIButton!
-  
-  var onSaveButton: (() -> Void)?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -44,9 +37,5 @@ final class NewPostView: UIView, NewPostViewProtocol {
       contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
       contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
     ])
-  }
-  
-  @IBAction func saveButtonTapped() {
-    onSaveButton?()
   }
 }

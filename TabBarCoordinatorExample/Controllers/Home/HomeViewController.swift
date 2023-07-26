@@ -39,6 +39,11 @@ final class HomeViewController: UIViewController {
     setupUI()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    isShowTabBar()
+  }
+
   private func setupUI() {
     setupCollectionViewLayout()
     setupCollectionView()
@@ -58,6 +63,10 @@ final class HomeViewController: UIViewController {
 
   private func registerCell() {
     homeView.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+  }
+
+  private func isShowTabBar() {
+    tabBarController?.tabBar.isHidden = false
   }
 }
 

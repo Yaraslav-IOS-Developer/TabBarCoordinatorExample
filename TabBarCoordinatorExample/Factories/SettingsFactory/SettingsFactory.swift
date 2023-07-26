@@ -18,7 +18,7 @@ struct SettingsFactory: ItemTabBarFactory {
     return controller
   }
 
-  func makeTabBarItem(navigation: UINavigationController) {
+  func makeTabBarItem(navigation: NavigationPortocol) {
     makeItemTabBar(
       navigation: navigation,
       title: "Setting",

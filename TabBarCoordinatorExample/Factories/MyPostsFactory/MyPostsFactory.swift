@@ -8,9 +8,10 @@
 import UIKit
 
 protocol MyPostsFactory {
-  func makeTabBarItem(navigation: UINavigationController)
+  func makeTabBarItem(navigation: NavigationPortocol)
   func makeMyPostsViewController(coordinator: MyPostsViewControllerDelegate?) -> UIViewController
   func makeNewPostViewController(coordinator: NewPostViewControllerCoordinator?) -> UIViewController
+  func makePostDetailsCoordinator(navigation: NavigationPortocol, id: Int, parentCoordinator: ParentCoordinator?) -> CoordinatorProtocol
 }
 
 struct MyPostsFactoryImp: MyPostsFactory {
@@ -24,7 +25,7 @@ struct MyPostsFactoryImp: MyPostsFactory {
     return myPostsViewController
   }
 
-  func makeTabBarItem(navigation: UINavigationController) {
+  func makeTabBarItem(navigation: NavigationPortocol) {
     makeItemTabBar(
       navigation: navigation,
       title: "My Posts",
@@ -37,6 +38,21 @@ struct MyPostsFactoryImp: MyPostsFactory {
     let newPostViewController = NewPostViewController(newPostView: newPostView, coordinator: coordinator)
 
     return newPostViewController
+  }
+
+  func makePostDetailsCoordinator(
+    navigation: NavigationPortocol,
+    id: Int,
+    parentCoordinator: ParentCoordinator?
+  ) -> CoordinatorProtocol {
+    let factory = PostDetailFactory(id: id)
+    let coordinator = PostDetailCoordinator(
+      navigation: navigation,
+      factory: factory,
+      parentCoordinator: parentCoordinator
+    )
+
+    return coordinator
   }
 }
 

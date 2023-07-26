@@ -32,7 +32,7 @@ struct MainTabBarFactory {
 
   private func makeHomeCoordinator() -> CoordinatorProtocol {
     let factory = HomeFactoryImp()
-    let navigation = UINavigationController()
+    let navigation = NavigationImp(rootViewController: UINavigationController())
     let coordinator = HomeCoordinator(navigation: navigation, factory: factory)
 
     return coordinator
@@ -40,7 +40,7 @@ struct MainTabBarFactory {
 
   private func makeCommunitiesCoordinator() -> CoordinatorProtocol {
     let factory = CommunitiesFactoryImp(appDIContainer: appDIContainer)
-    let navigation = UINavigationController()
+    let navigation = NavigationImp(rootViewController: UINavigationController())
     let coordinator = CommunitiesCoordinator(navigation: navigation, factory: factory)
 
     return coordinator
@@ -48,7 +48,7 @@ struct MainTabBarFactory {
 
   private func makePostCoordinator() -> CoordinatorProtocol {
     let factory = MyPostsFactoryImp()
-    let navigation = UINavigationController()
+    let navigation = NavigationImp(rootViewController: UINavigationController())
     let mediator = MyPostsMediatorImp()
     let newPostView = NewPostView()
     let myPostView = MyPostsView()
@@ -65,7 +65,7 @@ struct MainTabBarFactory {
 
   private func makeSettingsCoordinator(delegate: SettingsCoordinatorDelegate?) -> CoordinatorProtocol {
     let factory = SettingsFactory(appDIContainer: appDIContainer)
-    let navigation = UINavigationController()
+    let navigation = NavigationImp(rootViewController: UINavigationController())
     let coordinator = SettingsCoordinator(navigation: navigation, factory: factory, delegate: delegate)
 
     return coordinator

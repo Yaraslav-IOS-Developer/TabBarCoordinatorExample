@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PostDetailView" customModule="TabBarCoordinatorExample" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="I2b-ci-vFp"/>
+                <outlet property="moreDetailButton" destination="9Om-UP-QCP" id="gJH-ol-itn"/>
+                <outlet property="photoButton" destination="COh-Db-qjC" id="l0c-83-7qr"/>
+                <outlet property="sourceButton" destination="INh-Pc-HAh" id="KPI-U5-HWG"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="eg3-Iq-E2W">
+                    <rect key="frame" x="60" y="348" width="273" height="156"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="COh-Db-qjC">
+                            <rect key="frame" x="0.0" y="0.0" width="273" height="30"/>
+                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Photo">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.80451245039999997" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="photoButtonTapped" destination="-1" eventType="touchUpInside" id="z1R-pz-d1W"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Om-UP-QCP">
+                            <rect key="frame" x="0.0" y="63" width="273" height="30"/>
+                            <color key="backgroundColor" systemColor="systemTealColor"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Detail">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.80451245039999997" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="moreDetailButtonTapped" destination="-1" eventType="touchUpInside" id="136-Qo-PuL"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="INh-Pc-HAh">
+                            <rect key="frame" x="0.0" y="126" width="273" height="30"/>
+                            <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Source">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.80451245039999997" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="sourceButtonTapped" destination="-1" eventType="touchUpInside" id="3aG-E1-wZb"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" red="0.87853538990000002" green="0.65726751090000002" blue="0.90982937809999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="eg3-Iq-E2W" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mTX-et-Wfg"/>
+                <constraint firstItem="eg3-Iq-E2W" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="q3n-9C-Kg7"/>
+                <constraint firstItem="eg3-Iq-E2W" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="60" id="s9O-PR-Y0o"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="eg3-Iq-E2W" secondAttribute="trailing" constant="60" id="tiZ-Cx-yhB"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -13,14 +13,13 @@ protocol AuthCoordinatorDelegate: AnyObject {
 }
 
 final class AuthCoordinator: CoordinatorProtocol {
-  var navigation: UINavigationController
+  var navigation: NavigationPortocol
   
   private let factory: AuthFactory
 
   weak var delegate: AuthCoordinatorDelegate?
 
-
-  init(navigation: UINavigationController, factory: AuthFactory, delegate: AuthCoordinatorDelegate?) {
+  init(navigation: NavigationPortocol, factory: AuthFactory, delegate: AuthCoordinatorDelegate?) {
     self.navigation = navigation
     self.factory = factory
     self.delegate = delegate
@@ -28,7 +27,7 @@ final class AuthCoordinator: CoordinatorProtocol {
 
   func start() {
     let controller = factory.makeAuthViewController(coordinator: self)
-    navigation.pushViewController(controller, animated: true)
+    navigation.pushViewController(controller, animate: true)
   }
 }
 
