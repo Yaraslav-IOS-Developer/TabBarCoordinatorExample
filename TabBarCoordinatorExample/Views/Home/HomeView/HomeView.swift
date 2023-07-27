@@ -9,8 +9,8 @@ import UIKit
 
 
 protocol HomeViewProtocol: AnyObject {
-  var contentView: UIView! { get set }
-  var collectionView: UICollectionView! { get set }
+  var contentView: UIView! { get }
+  var collectionView: UICollectionView! { get }
 }
 
 final class HomeView: UIView, HomeViewProtocol {

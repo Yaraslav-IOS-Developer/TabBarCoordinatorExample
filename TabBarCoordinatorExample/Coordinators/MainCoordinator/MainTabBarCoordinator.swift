@@ -31,7 +31,7 @@ final class MainTabBarCoordinator: CoordinatorProtocol {
 
   func start() {
     let navigationTabBar = factory.makeMainTabBarController()
-    navigation.pushViewController(navigationTabBar, animate: false)
+    navigation.pushViewController(navigationTabBar, animated: false)
     navigation.navigationBar.isHidden = true
 
     childCoordinators = factory.makeChildCoordinators(delegate: self)

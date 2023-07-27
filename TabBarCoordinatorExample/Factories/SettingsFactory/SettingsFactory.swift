@@ -26,6 +26,16 @@ struct SettingsFactory: ItemTabBarFactory {
       selectedImage: "gearshape.2.fill")
   }
 
+  func makeUserConfigurationCoordinator(delegate: UserConfigurationCoordinatorDelegate?) -> CoordinatorProtocol {
+    let factory = UserConfigurationFactory()
+    let navigationViewController = UINavigationController()
+    navigationViewController.modalPresentationStyle = .fullScreen
+    let navigation = NavigationImp(rootViewController: navigationViewController)
+    let coordinator = UserConfigurationCoordinator(navigation: navigation, factory: factory, delegate: delegate)
+
+    return coordinator
+  }
+
   func makeAccountViewController() -> UIViewController {
     let accountViewController = AccountViewController()
     accountViewController.title = "Account"

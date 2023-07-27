@@ -48,6 +48,6 @@ extension PostDetailCoordinator: PostDetailViewControllerCoordinator {
 
   func didSourceButton() {
     let postDetailSourceViewController = factory.makePostDetailSourceViewController()  
-    navigation.pushViewController(postDetailSourceViewController, animate: true)
+    navigation.pushViewController(postDetailSourceViewController, animated: true)
   }
 }

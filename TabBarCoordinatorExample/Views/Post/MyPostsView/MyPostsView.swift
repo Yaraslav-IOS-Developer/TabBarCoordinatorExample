@@ -8,9 +8,9 @@
 import UIKit
 
 protocol MyPostsViewProtocol: AnyObject {
-  var contentView: UIView! { get set }
-  var collectionView: UICollectionView! { get set }
-  var exampleLabel: UILabel! { get set }
+  var contentView: UIView! { get }
+  var collectionView: UICollectionView! { get }
+  var exampleLabel: UILabel! { get }
 
   func updateLabel(title: String)
 }

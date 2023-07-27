@@ -1,17 +1,18 @@
 //
-//  MoreDetailView.swift
+//  UserConfigurationView.swift
 //  TabBarCoordinatorExample
 //
-//  Created by Yaroslav on 26.07.23.
+//  Created by Yaroslav on 27.07.23.
 //
 
 import UIKit
 
-protocol MoreDetailProtocol: AnyObject {
+
+protocol UserConfigurationProtocol: AnyObject {
   var contentView: UIView! { get }
 }
 
-final class MoreDetailView: UIView, MoreDetailProtocol {
+final class UserConfigurationView: UIView, UserConfigurationProtocol{
   @IBOutlet weak var contentView: UIView!
 
   override init(frame: CGRect) {

@@ -14,6 +14,8 @@ protocol SettingsCoordinatorDelegate: AnyObject {
 final class SettingsCoordinator: CoordinatorProtocol {
   var navigation: NavigationPortocol
   private let factory: SettingsFactory
+
+   var userConfigurationCoordinator: CoordinatorProtocol?
   private weak var delegate: SettingsCoordinatorDelegate?
 
   init(
@@ -29,7 +31,7 @@ final class SettingsCoordinator: CoordinatorProtocol {
   func start() {
     let controller = factory.makeSettingsViewController(settingViewControllerDelegate: self)
     navigation.navigationBar.prefersLargeTitles = true
-    navigation.pushViewController(controller, animate: true)
+    navigation.pushViewController(controller, animated: true)
     factory.makeTabBarItem(navigation: navigation)
   }
 }
@@ -38,13 +40,13 @@ extension SettingsCoordinator: SettingViewControllerDelegate {
   func didSelectCell(settingsNavigation: SettingsNavigation) {
     switch settingsNavigation {
       case .userConfiguration:
-        break
+        callUserConfigurationCoordinator()
 
       case .account:
-        navigation.pushViewController(factory.makeAccountViewController(), animate: true)
+        navigation.pushViewController(factory.makeAccountViewController(), animated: true)
 
       case .theme:
-        navigation.pushViewController(factory.makeThemeViewController(), animate: true)
+        navigation.pushViewController(factory.makeThemeViewController(), animated: true)
 
       case .logOut:
         delegate?.didTapLogOut()
@@ -52,6 +54,21 @@ extension SettingsCoordinator: SettingViewControllerDelegate {
       case .noNavigation:
         break
     }
+  }
+
+  private func callUserConfigurationCoordinator() {
+    userConfigurationCoordinator = factory.makeUserConfigurationCoordinator(delegate: self)
+    guard let userConfigurationCoordinator = userConfigurationCoordinator else { return }
+    userConfigurationCoordinator.start()
+    let viewController = userConfigurationCoordinator.navigation.rootViewController
+    navigation.present(viewController, animate: true)
+  }
+}
+
+extension SettingsCoordinator: UserConfigurationCoordinatorDelegate {
+  func didFinish() {
+    userConfigurationCoordinator = nil
+    navigation.dismiss(animate: true)
   }
 }
 

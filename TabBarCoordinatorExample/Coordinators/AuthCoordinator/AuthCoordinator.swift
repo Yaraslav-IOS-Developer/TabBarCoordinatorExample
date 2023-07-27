@@ -27,7 +27,7 @@ final class AuthCoordinator: CoordinatorProtocol {
 
   func start() {
     let controller = factory.makeAuthViewController(coordinator: self)
-    navigation.pushViewController(controller, animate: true)
+    navigation.pushViewController(controller, animated: true)
   }
 }
 
