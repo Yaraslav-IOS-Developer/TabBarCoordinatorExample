@@ -19,7 +19,7 @@ final class CommunitiesCoordinator: CoordinatorProtocol {
   func start() {
     let communitiesViewController = factory.makeCommunitiesViewController()
     navigation.navigationBar.prefersLargeTitles = true
-    navigation.pushViewController(communitiesViewController, animate: true)
+    navigation.pushViewController(communitiesViewController, animated: true)
 
     factory.makeTabBarItem(navigation: navigation)
   }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol PostDetailPhotosProtocol: AnyObject {
-  var contentView: UIView! { get set}
+  var contentView: UIView! { get }
 }
 
 final class PostDetailPhotosView: UIView, PostDetailPhotosProtocol {

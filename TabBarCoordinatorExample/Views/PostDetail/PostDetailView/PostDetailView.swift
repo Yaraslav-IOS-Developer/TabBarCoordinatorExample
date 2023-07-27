@@ -8,10 +8,10 @@
 import UIKit
 
 protocol PostDetailProtocol: AnyObject {
-  var contentView: UIView! { get set }
-  var photoButton: UIButton! { get set }
-  var moreDetailButton: UIButton! { get set }
-  var sourceButton: UIButton! { get set }
+  var contentView: UIView! { get }
+  var photoButton: UIButton! { get }
+  var moreDetailButton: UIButton! { get }
+  var sourceButton: UIButton! { get }
 
   var onMoreDetailButton: (() -> Void)? { get set }
   var onSourceButton: (() -> Void)? { get set }

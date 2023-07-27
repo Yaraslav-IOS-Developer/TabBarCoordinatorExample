@@ -1,17 +1,17 @@
 //
-//  MoreDetailView.swift
+//  AvatarView.swift
 //  TabBarCoordinatorExample
 //
-//  Created by Yaroslav on 26.07.23.
+//  Created by Yaroslav on 27.07.23.
 //
 
 import UIKit
 
-protocol MoreDetailProtocol: AnyObject {
+protocol AvatarProtocol: AnyObject {
   var contentView: UIView! { get }
 }
 
-final class MoreDetailView: UIView, MoreDetailProtocol {
+final class AvatarView: UIView, AvatarProtocol {
   @IBOutlet weak var contentView: UIView!
 
   override init(frame: CGRect) {

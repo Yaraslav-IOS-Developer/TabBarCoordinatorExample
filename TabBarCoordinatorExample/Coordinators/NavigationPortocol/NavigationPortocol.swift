@@ -12,6 +12,7 @@ protocol NavigationPortocol: AnyObject {
   var rootViewController: UINavigationController { get }
   var viewController: [UIViewController] { get set }
   var navigationBar: UINavigationBar { get }
+
   func present(_ viewControllerToPresent: UIViewController, animate: Bool)
   func pushViewController(_ viewControllerToPresent: UIViewController, animate: Bool, completion: (() -> Void)?)
   func dismiss(animate: Bool)
@@ -19,8 +20,8 @@ protocol NavigationPortocol: AnyObject {
 }
 
 extension NavigationPortocol {
-  func pushViewController(_ viewControllerToPresent: UIViewController, animate: Bool) {
-   pushViewController(viewControllerToPresent, animate: animate, completion: nil)
+  func pushViewController(_ viewControllerToPresent: UIViewController, animated: Bool) {
+   pushViewController(viewControllerToPresent, animate: animated, completion: nil)
   }
 }
 

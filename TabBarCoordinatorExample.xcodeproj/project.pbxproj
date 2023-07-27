@@ -39,6 +39,14 @@
 		C44AD3D02A66C55000ECA9C9 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3CF2A66C55000ECA9C9 /* SettingsCoordinator.swift */; };
 		C44AD3D42A66C5CA00ECA9C9 /* SettingsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3D32A66C5CA00ECA9C9 /* SettingsFactory.swift */; };
 		C44AD3D72A66D20100ECA9C9 /* ItemTabBarFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44AD3D62A66D20100ECA9C9 /* ItemTabBarFactory.swift */; };
+		C4564D8C2A729E000013A2B4 /* UserConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4564D8B2A729E000013A2B4 /* UserConfigurationViewController.swift */; };
+		C4564D902A729E900013A2B4 /* UserConfigurationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4564D8F2A729E900013A2B4 /* UserConfigurationView.swift */; };
+		C4564D922A729F140013A2B4 /* UserConfigurationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4564D912A729F140013A2B4 /* UserConfigurationView.xib */; };
+		C4564D952A72A4BD0013A2B4 /* UserConfigurationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4564D942A72A4BD0013A2B4 /* UserConfigurationFactory.swift */; };
+		C4564D992A72A6D00013A2B4 /* AvatarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4564D982A72A6D00013A2B4 /* AvatarViewController.swift */; };
+		C4564D9D2A72A7860013A2B4 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4564D9C2A72A7860013A2B4 /* AvatarView.swift */; };
+		C4564D9F2A72A7DF0013A2B4 /* AvatarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4564D9E2A72A7DF0013A2B4 /* AvatarView.xib */; };
+		C4564DA22A72A95A0013A2B4 /* UserConfigurationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4564DA12A72A95A0013A2B4 /* UserConfigurationCoordinator.swift */; };
 		C46FD8292A6D28DB003DF458 /* PostCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46FD8282A6D28DB003DF458 /* PostCoordinator.swift */; };
 		C46FD82C2A6D2E5C003DF458 /* MyPostsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46FD82B2A6D2E5C003DF458 /* MyPostsMediator.swift */; };
 		C47CE87E2A5F0E2C00E43E63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C47CE87D2A5F0E2C00E43E63 /* AppDelegate.swift */; };
@@ -110,6 +118,14 @@
 		C44AD3CF2A66C55000ECA9C9 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		C44AD3D32A66C5CA00ECA9C9 /* SettingsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFactory.swift; sourceTree = "<group>"; };
 		C44AD3D62A66D20100ECA9C9 /* ItemTabBarFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTabBarFactory.swift; sourceTree = "<group>"; };
+		C4564D8B2A729E000013A2B4 /* UserConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationViewController.swift; sourceTree = "<group>"; };
+		C4564D8F2A729E900013A2B4 /* UserConfigurationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationView.swift; sourceTree = "<group>"; };
+		C4564D912A729F140013A2B4 /* UserConfigurationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserConfigurationView.xib; sourceTree = "<group>"; };
+		C4564D942A72A4BD0013A2B4 /* UserConfigurationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationFactory.swift; sourceTree = "<group>"; };
+		C4564D982A72A6D00013A2B4 /* AvatarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewController.swift; sourceTree = "<group>"; };
+		C4564D9C2A72A7860013A2B4 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
+		C4564D9E2A72A7DF0013A2B4 /* AvatarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AvatarView.xib; sourceTree = "<group>"; };
+		C4564DA12A72A95A0013A2B4 /* UserConfigurationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserConfigurationCoordinator.swift; sourceTree = "<group>"; };
 		C46FD8282A6D28DB003DF458 /* PostCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCoordinator.swift; sourceTree = "<group>"; };
 		C46FD82B2A6D2E5C003DF458 /* MyPostsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsMediator.swift; sourceTree = "<group>"; };
 		C47CE87A2A5F0E2C00E43E63 /* TabBarCoordinatorExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabBarCoordinatorExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -215,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				C44AD3BE2A66B49900ECA9C9 /* SettingViewController */,
+				C4564D962A72A6920013A2B4 /* UserConfiguration */,
 				C430BA752A6ADA9600642FE0 /* AccountViewController */,
 				C430BA762A6ADAB200642FE0 /* ThemeViewController */,
 			);
@@ -257,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				C44AD3BF2A66B4B600ECA9C9 /* SettingView */,
+				C4564D9A2A72A7460013A2B4 /* UserConfiguration */,
 				C430BA782A6ADAF100642FE0 /* AccountView */,
 				C430BA792A6ADB0100642FE0 /* ThemeView */,
 			);
@@ -431,6 +449,74 @@
 			path = ItemTabBarFactory;
 			sourceTree = "<group>";
 		};
+		C4564D8D2A729E080013A2B4 /* UserConfigurationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C4564D8B2A729E000013A2B4 /* UserConfigurationViewController.swift */,
+			);
+			path = UserConfigurationViewController;
+			sourceTree = "<group>";
+		};
+		C4564D8E2A729E780013A2B4 /* UserConfigurationView */ = {
+			isa = PBXGroup;
+			children = (
+				C4564D8F2A729E900013A2B4 /* UserConfigurationView.swift */,
+				C4564D912A729F140013A2B4 /* UserConfigurationView.xib */,
+			);
+			path = UserConfigurationView;
+			sourceTree = "<group>";
+		};
+		C4564D932A72A46C0013A2B4 /* UserConfigurationFactoory */ = {
+			isa = PBXGroup;
+			children = (
+				C4564D942A72A4BD0013A2B4 /* UserConfigurationFactory.swift */,
+			);
+			path = UserConfigurationFactoory;
+			sourceTree = "<group>";
+		};
+		C4564D962A72A6920013A2B4 /* UserConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				C4564D8D2A729E080013A2B4 /* UserConfigurationViewController */,
+				C4564D972A72A6B30013A2B4 /* AvatarViewController */,
+			);
+			path = UserConfiguration;
+			sourceTree = "<group>";
+		};
+		C4564D972A72A6B30013A2B4 /* AvatarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C4564D982A72A6D00013A2B4 /* AvatarViewController.swift */,
+			);
+			path = AvatarViewController;
+			sourceTree = "<group>";
+		};
+		C4564D9A2A72A7460013A2B4 /* UserConfiguration */ = {
+			isa = PBXGroup;
+			children = (
+				C4564D8E2A729E780013A2B4 /* UserConfigurationView */,
+				C4564D9B2A72A7700013A2B4 /* AvatarView */,
+			);
+			path = UserConfiguration;
+			sourceTree = "<group>";
+		};
+		C4564D9B2A72A7700013A2B4 /* AvatarView */ = {
+			isa = PBXGroup;
+			children = (
+				C4564D9C2A72A7860013A2B4 /* AvatarView.swift */,
+				C4564D9E2A72A7DF0013A2B4 /* AvatarView.xib */,
+			);
+			path = AvatarView;
+			sourceTree = "<group>";
+		};
+		C4564DA02A72A9290013A2B4 /* UserConfigurationCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C4564DA12A72A95A0013A2B4 /* UserConfigurationCoordinator.swift */,
+			);
+			path = UserConfigurationCoordinator;
+			sourceTree = "<group>";
+		};
 		C46FD8272A6D28A1003DF458 /* PostCoordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,8 +596,9 @@
 				C4EB27592A7044CC0064C9FE /* HomeCoordinator */,
 				C430BA872A6AE2FC00642FE0 /* CommunitiesCoordinator */,
 				C46FD8272A6D28A1003DF458 /* PostCoordinator */,
-				C44AD3CE2A66C51B00ECA9C9 /* SettingsCoordinator */,
 				C4EB276C2A705F8B0064C9FE /* PostDetailCoordinator */,
+				C44AD3CE2A66C51B00ECA9C9 /* SettingsCoordinator */,
+				C4564DA02A72A9290013A2B4 /* UserConfigurationCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -597,6 +684,7 @@
 				C430BA942A6AE57100642FE0 /* CommunitiesFactory */,
 				C4C8CD672A6D1B0600064C22 /* MyPostsFactory */,
 				C44AD3D12A66C57900ECA9C9 /* SettingsFactory */,
+				C4564D932A72A46C0013A2B4 /* UserConfigurationFactoory */,
 				C4EB27692A705CA00064C9FE /* PostDetailFactory */,
 			);
 			path = Factories;
@@ -856,6 +944,8 @@
 				C4C8CD712A6D1C1900064C22 /* NewPostView.xib in Resources */,
 				C430BA932A6AE40C00642FE0 /* CommunitiesView.xib in Resources */,
 				C4EB27772A7181010064C9FE /* PostDetailPhotosView.xib in Resources */,
+				C4564D9F2A72A7DF0013A2B4 /* AvatarView.xib in Resources */,
+				C4564D922A729F140013A2B4 /* UserConfigurationView.xib in Resources */,
 				C430BA7D2A6ADB6900642FE0 /* AccountView.xib in Resources */,
 				C47CE8872A5F0E2E00E43E63 /* Assets.xcassets in Resources */,
 				C4EB27682A704F060064C9FE /* PostDetailView.xib in Resources */,
@@ -874,6 +964,7 @@
 				C4EB27662A704E750064C9FE /* PostDetailView.swift in Sources */,
 				C4EB27712A717ED20064C9FE /* PostDetailPhotosViewController.swift in Sources */,
 				C4CBDD8E2A657C27001D1F4E /* AppDIContainer.swift in Sources */,
+				C4564D952A72A4BD0013A2B4 /* UserConfigurationFactory.swift in Sources */,
 				C430BA7F2A6ADBB200642FE0 /* AccountViewController.swift in Sources */,
 				C4EB278A2A71896A0064C9FE /* NavigationPortocol.swift in Sources */,
 				C430BA812A6ADE3A00642FE0 /* ThemeViewController.swift in Sources */,
@@ -895,6 +986,8 @@
 				C4EB27832A7186AF0064C9FE /* PostDetailSourceViewController.swift in Sources */,
 				C44AD3D42A66C5CA00ECA9C9 /* SettingsFactory.swift in Sources */,
 				C44AD3C32A66B5C000ECA9C9 /* SettingsNavigation.swift in Sources */,
+				C4564D902A729E900013A2B4 /* UserConfigurationView.swift in Sources */,
+				C4564D9D2A72A7860013A2B4 /* AvatarView.swift in Sources */,
 				C4EB278D2A7195D90064C9FE /* ParentCoordinator.swift in Sources */,
 				C430BA6A2A65A70900642FE0 /* AuthFactory.swift in Sources */,
 				C44AD3D72A66D20100ECA9C9 /* ItemTabBarFactory.swift in Sources */,
@@ -923,8 +1016,11 @@
 				C4EB275B2A7045190064C9FE /* HomeCoordinator.swift in Sources */,
 				C4C8CD6F2A6D1BDA00064C22 /* NewPostView.swift in Sources */,
 				C4C8CD692A6D1B5500064C22 /* MyPostsFactory.swift in Sources */,
+				C4564D8C2A729E000013A2B4 /* UserConfigurationViewController.swift in Sources */,
+				C4564DA22A72A95A0013A2B4 /* UserConfigurationCoordinator.swift in Sources */,
 				C44AD3C72A66B70800ECA9C9 /* SettingsViewModel.swift in Sources */,
 				C4EB27622A704E0B0064C9FE /* PostDetailViewController.swift in Sources */,
+				C4564D992A72A6D00013A2B4 /* AvatarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,9 +8,9 @@
 import UIKit
 
 protocol NewPostViewProtocol: AnyObject {
-  var contentView: UIView! { get set }
-  var saveButton: UIButton! { get set }
-  var onSaveButton: (() -> Void)? { get set }
+  var contentView: UIView! { get }
+  var saveButton: UIButton! { get }
+  var onSaveButton: (() -> Void)? { get set}
 
   func saveButtonTapped()
 }
