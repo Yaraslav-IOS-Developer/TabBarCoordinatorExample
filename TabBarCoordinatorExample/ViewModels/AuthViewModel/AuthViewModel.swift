@@ -8,7 +8,12 @@
 import Foundation
 
 
-final class AuthViewModel {
+protocol AuthViewModelProtocol: AnyObject {
+  func logIn()
+  func logOut()
+}
+
+final class AuthViewModel: AuthViewModelProtocol {
   var authLogIn: AuthLogIn?
   var authLogOut: AuthLogOut?
 

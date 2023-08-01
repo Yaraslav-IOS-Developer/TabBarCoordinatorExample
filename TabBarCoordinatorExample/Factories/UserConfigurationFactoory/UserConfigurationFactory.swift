@@ -8,7 +8,12 @@
 import UIKit
 
 
-struct UserConfigurationFactory {
+protocol UserConfigurationFactoryProtocol {
+  func makeUserConfigurationViewController(coordinator: UserConfigurationViewControllerCoordinator?) -> UIViewController
+  func makeAvatarViewController() -> UIViewController
+}
+
+struct UserConfigurationFactory: UserConfigurationFactoryProtocol {
   func makeUserConfigurationViewController(coordinator: UserConfigurationViewControllerCoordinator?) -> UIViewController {
     let userConfigurationView = UserConfigurationView()
     let userConfigurationViewController = UserConfigurationViewController(userConfigurationView: userConfigurationView, coordinator: coordinator)

@@ -8,7 +8,11 @@
 import UIKit
 
 
-final class ThemeView: UIView {
+protocol ThemeViewProtocol: AnyObject {
+  var contentView: UIView! { get }
+}
+
+final class ThemeView: UIView, ThemeViewProtocol {
   @IBOutlet weak var contentView: UIView!
 
   override init(frame: CGRect) {

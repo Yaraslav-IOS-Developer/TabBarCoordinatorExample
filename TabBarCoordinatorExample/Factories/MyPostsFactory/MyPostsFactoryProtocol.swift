@@ -7,14 +7,15 @@
 
 import UIKit
 
-protocol MyPostsFactory {
-  func makeTabBarItem(navigation: NavigationPortocol)
+
+protocol MyPostsFactoryProtocol {
+  func makeTabBarItem(navigation: NavigationProtocol)
   func makeMyPostsViewController(coordinator: MyPostsViewControllerDelegate?) -> UIViewController
   func makeNewPostViewController(coordinator: NewPostViewControllerCoordinator?) -> UIViewController
-  func makePostDetailsCoordinator(navigation: NavigationPortocol, id: Int, parentCoordinator: ParentCoordinator?) -> CoordinatorProtocol
+  func makePostDetailsCoordinator(navigation: NavigationProtocol, id: Int, parentCoordinator: ParentCoordinator?) -> CoordinatorProtocol
 }
 
-struct MyPostsFactoryImp: MyPostsFactory {
+struct MyPostsFactoryImp: MyPostsFactoryProtocol {
   func makeMyPostsViewController(coordinator: MyPostsViewControllerDelegate?) -> UIViewController {
     let layout = UICollectionViewFlowLayout()
     let myPostView = MyPostsView()
@@ -25,7 +26,7 @@ struct MyPostsFactoryImp: MyPostsFactory {
     return myPostsViewController
   }
 
-  func makeTabBarItem(navigation: NavigationPortocol) {
+  func makeTabBarItem(navigation: NavigationProtocol) {
     makeItemTabBar(
       navigation: navigation,
       title: "My Posts",
@@ -41,7 +42,7 @@ struct MyPostsFactoryImp: MyPostsFactory {
   }
 
   func makePostDetailsCoordinator(
-    navigation: NavigationPortocol,
+    navigation: NavigationProtocol,
     id: Int,
     parentCoordinator: ParentCoordinator?
   ) -> CoordinatorProtocol {

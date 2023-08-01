@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol NewPostViewControllerCoordinator: AnyObject {
   func didSaveNewPost(title: String)
 }

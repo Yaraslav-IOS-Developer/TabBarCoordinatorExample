@@ -7,19 +7,22 @@
 
 import UIKit
 
+
 protocol AuthViewControllerCoordinator: AnyObject {
   func didFinish()
 }
 
 final class AuthViewController: UIViewController {
-  private var contentView: AuthView! {
-    return view as? AuthView
-  }
-
+  private var authView: AuthViewProtocol
   private weak var coordinator: AuthViewControllerCoordinator?
-  private let viewModel: AuthViewModel?
+  private let viewModel: AuthViewModelProtocol?
 
-  init(coordinator: AuthViewControllerCoordinator?, viewModel: AuthViewModel?) {
+  init(
+    authView: AuthViewProtocol,
+    coordinator: AuthViewControllerCoordinator?,
+    viewModel: AuthViewModelProtocol?
+  ) {
+    self.authView = authView
     self.coordinator = coordinator
     self.viewModel = viewModel
     super.init(nibName: nil, bundle: nil)
@@ -30,7 +33,7 @@ final class AuthViewController: UIViewController {
   }
 
   override func loadView() {
-    view = AuthView()
+    view = authView as? UIView
   }
 
   override func viewDidLoad() {
@@ -39,7 +42,7 @@ final class AuthViewController: UIViewController {
   }
 
   private func setupButtons() {
-    contentView.onLoginButton = { [weak self] in
+    authView.onLoginButton = { [weak self] in
       guard let sSelf = self else { return }
       sSelf.viewModel?.logIn()
       sSelf.coordinator?.didFinish()

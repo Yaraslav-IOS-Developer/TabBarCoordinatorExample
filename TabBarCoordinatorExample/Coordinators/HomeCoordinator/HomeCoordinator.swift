@@ -9,11 +9,11 @@ import UIKit
 
 
 final class HomeCoordinator: CoordinatorProtocol {
-  var navigation: NavigationPortocol
+  var navigation: NavigationProtocol
   var childCoordinators: [CoordinatorProtocol] = []
-  private let factory: HomeFactory
+  private let factory: HomeFactoryProtocol
 
-  init(navigation: NavigationPortocol, factory: HomeFactory) {
+  init(navigation: NavigationProtocol, factory: HomeFactoryProtocol) {
     self.navigation = navigation
     self.factory = factory
   }

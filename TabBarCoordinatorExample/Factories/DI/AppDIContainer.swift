@@ -8,6 +8,10 @@
 import Foundation
 
 
-struct AppDIContainer {
+protocol AppDIContainerProtocol {
+  var auth: Auth { get }
+}
+
+struct AppDIContainer: AppDIContainerProtocol {
   var auth = Auth()
 }

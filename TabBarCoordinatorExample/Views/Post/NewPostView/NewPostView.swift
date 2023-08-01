@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol NewPostViewProtocol: AnyObject {
   var contentView: UIView! { get }
   var saveButton: UIButton! { get }

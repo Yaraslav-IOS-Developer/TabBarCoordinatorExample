@@ -7,7 +7,14 @@
 
 import Foundation
 
-final class SettingsViewModel {
+
+protocol SettingsViewModelProtocol {
+  var settingCount: Int { get }
+  func getItemSettingViewModel(row: Int) -> ItemSettingsViewModel
+  func cellSelected(row: Int)  -> SettingsNavigation
+}
+
+final class SettingsViewModel: SettingsViewModelProtocol {
   private var itemSettingsViewModel: [ItemSettingsViewModel] = [
     ItemSettingsViewModel(
       title: "User Configuration",

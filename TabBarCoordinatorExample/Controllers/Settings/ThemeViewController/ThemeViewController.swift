@@ -7,17 +7,24 @@
 
 import UIKit
 
+
 final class ThemeViewController: UIViewController {
-  private var containerView: ThemeView! {
-    return view as? ThemeView
+  private var themeView: ThemeViewProtocol
+
+  init(themeView: ThemeViewProtocol) {
+    self.themeView = themeView
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
   override func loadView() {
-    view = ThemeView()
+    view = themeView as? UIView
   }
 
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-  
 }

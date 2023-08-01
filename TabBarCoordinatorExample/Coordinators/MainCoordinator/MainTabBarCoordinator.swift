@@ -7,21 +7,21 @@
 
 import UIKit
 
+
 protocol MainTabBarCoordinatorDelegate: AnyObject {
   func didFinish()
 }
 
 final class MainTabBarCoordinator: CoordinatorProtocol {
-  var navigation: NavigationPortocol
+  var navigation: NavigationProtocol
   var childCoordinators: [CoordinatorProtocol] = []
-  private var settingsCoordinator: CoordinatorProtocol?
-  private let factory: MainTabBarFactory
+  private let factory: MainTabBarFactoryProtocol
 
   private weak var delegate: MainTabBarCoordinatorDelegate?
 
   init(
-    navigation: NavigationPortocol,
-    factory: MainTabBarFactory,
+    navigation: NavigationProtocol,
+    factory: MainTabBarFactoryProtocol,
     delegate: MainTabBarCoordinatorDelegate?
   ) {
     self.navigation = navigation

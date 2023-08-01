@@ -8,10 +8,17 @@
 import UIKit
 
 
-struct MainTabBarFactory {
-  let appDIContainer: AppDIContainer?
+protocol MainTabBarFactoryProtocol {
+  var appDIContainer: AppDIContainerProtocol? { get }
 
-  func makeMainTabBarController() -> MainTabBarController {
+  func makeMainTabBarController() -> UITabBarController
+  func makeChildCoordinators(delegate: SettingsCoordinatorDelegate?) -> [CoordinatorProtocol]
+}
+
+struct MainTabBarFactory: MainTabBarFactoryProtocol {
+  let appDIContainer: AppDIContainerProtocol?
+
+  func makeMainTabBarController() -> UITabBarController {
     let mainTabBarController = MainTabBarController()
     return mainTabBarController
   }
@@ -39,7 +46,7 @@ struct MainTabBarFactory {
   }
 
   private func makeCommunitiesCoordinator() -> CoordinatorProtocol {
-    let factory = CommunitiesFactoryImp(appDIContainer: appDIContainer)
+    let factory = CommunitiesFactoryImp()
     let navigation = NavigationImp(rootViewController: UINavigationController())
     let coordinator = CommunitiesCoordinator(navigation: navigation, factory: factory)
 

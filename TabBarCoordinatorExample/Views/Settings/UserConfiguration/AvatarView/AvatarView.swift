@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol AvatarProtocol: AnyObject {
   var contentView: UIView! { get }
 }

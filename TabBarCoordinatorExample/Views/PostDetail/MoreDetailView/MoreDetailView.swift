@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol MoreDetailProtocol: AnyObject {
   var contentView: UIView! { get }
 }

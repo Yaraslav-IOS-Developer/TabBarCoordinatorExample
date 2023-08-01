@@ -7,10 +7,13 @@
 
 import UIKit
 
-final class CommunitiesView: UIView {
-  @IBOutlet weak var contentView: UIView!
 
-  var onLoginButton: (() -> Void)?
+protocol CommunitiesViewProtocol: AnyObject {
+  var contentView: UIView! { get }
+}
+
+final class CommunitiesView: UIView, CommunitiesViewProtocol {
+  @IBOutlet weak var contentView: UIView!
 
   override init(frame: CGRect) {
     super.init(frame: frame)

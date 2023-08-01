@@ -7,19 +7,19 @@
 
 import UIKit
 
+
 protocol UserConfigurationCoordinatorDelegate: AnyObject {
-  func didFinish()
+  func didFinish(childCoordinator: CoordinatorProtocol)
 }
 
 final class UserConfigurationCoordinator: CoordinatorProtocol {
-  var navigation: NavigationPortocol
-  private let factory: UserConfigurationFactory
+  var navigation: NavigationProtocol
+  private let factory: UserConfigurationFactoryProtocol
   private weak var delegate: UserConfigurationCoordinatorDelegate?
 
-
   init(
-    navigation: NavigationPortocol,
-    factory: UserConfigurationFactory,
+    navigation: NavigationProtocol,
+    factory: UserConfigurationFactoryProtocol,
     delegate: UserConfigurationCoordinatorDelegate?
   ) {
     self.navigation = navigation
@@ -31,12 +31,11 @@ final class UserConfigurationCoordinator: CoordinatorProtocol {
     let userConfiguration = factory.makeUserConfigurationViewController(coordinator: self)
     navigation.viewController = [userConfiguration]
   }
-
 }
 
 extension UserConfigurationCoordinator: UserConfigurationViewControllerCoordinator {
   func didFinishFlow() {
-    delegate?.didFinish()
+    delegate?.didFinish(childCoordinator: self)
   }
 
   func didSelectAvatarButton() {

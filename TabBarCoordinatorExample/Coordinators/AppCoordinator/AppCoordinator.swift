@@ -9,16 +9,13 @@ import UIKit
 
 
 final class AppCoordinator: CoordinatorProtocol {
-  private var authCoordinator: CoordinatorProtocol?
-  private var mainTabBarCoordinator: CoordinatorProtocol?
-
-  private var factory: AppFactory?
+  var navigation: NavigationProtocol
+  var childCoordinators: [CoordinatorProtocol] = []
+  private var window: UIWindow?
+  private var factory: AppFactoryProtocol?
   private var auth: SessionCheckerAuth?
 
-  var navigation: NavigationPortocol
-  var window: UIWindow?
-
-  init(navigation: NavigationPortocol, window: UIWindow, factory: AppFactory?, auth: Auth?) {
+  init(navigation: NavigationProtocol, window: UIWindow, factory: AppFactoryProtocol?, auth: Auth?) {
     self.navigation = navigation
     self.window = window
     self.factory = factory
@@ -45,28 +42,32 @@ final class AppCoordinator: CoordinatorProtocol {
   }
 
   private func startAuthCoordinator() {
-    authCoordinator = factory?.makeAuthCoordinator(navigation: navigation, delegate: self)
-    authCoordinator?.start()
+    let authCoordinator = factory?.makeAuthCoordinator(navigation: navigation, delegate: self)
+    addChildCoordinator(authCoordinator)
   }
 
   private func startMainTabBarCoordinator() {
-    mainTabBarCoordinator = factory?.makeMainTabBarCoordinator(navigation: navigation, delegate: self)
-    mainTabBarCoordinator?.start()
+    let mainTabBarCoordinator = factory?.makeMainTabBarCoordinator(navigation: navigation, delegate: self)
+    addChildCoordinator(mainTabBarCoordinator)
+  }
+
+  private func clearCurrentCoordinatorAndStartNextCoordinator() {
+    navigation.rootViewController.viewControllers = []
+    clearAllChildsCoordinator()
+    startSomeCoordinator()
   }
 }
 
 extension AppCoordinator: AuthCoordinatorDelegate {
   func didFinishLogin() {
-    navigation.rootViewController.viewControllers = []
-    authCoordinator = nil
-    startSomeCoordinator()
+    clearCurrentCoordinatorAndStartNextCoordinator()
   }
 }
 
 extension AppCoordinator: MainTabBarCoordinatorDelegate {
   func didFinish() {
-    navigation.rootViewController.viewControllers = []
-    mainTabBarCoordinator = nil
-    startSomeCoordinator()
+    clearCurrentCoordinatorAndStartNextCoordinator()
   }
 }
+
+extension AppCoordinator: ParentCoordinator { }

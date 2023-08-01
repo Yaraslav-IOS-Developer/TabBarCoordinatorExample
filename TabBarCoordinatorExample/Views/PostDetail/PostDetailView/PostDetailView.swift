@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol PostDetailProtocol: AnyObject {
   var contentView: UIView! { get }
   var photoButton: UIButton! { get }
