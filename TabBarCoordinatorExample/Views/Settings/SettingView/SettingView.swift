@@ -8,7 +8,12 @@
 import UIKit
 
 
-final class SettingView: UIView {
+protocol SettingViewProtocol: AnyObject {
+  var contentView: UIView! { get }
+  var tableView: UITableView! { get }
+}
+
+final class SettingView: UIView, SettingViewProtocol {
   @IBOutlet weak var contentView: UIView!
   @IBOutlet weak var tableView: UITableView!
 

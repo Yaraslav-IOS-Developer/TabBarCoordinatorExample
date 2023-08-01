@@ -7,20 +7,21 @@
 
 import UIKit
 
+
 protocol SettingsCoordinatorDelegate: AnyObject {
   func didTapLogOut()
 }
 
 final class SettingsCoordinator: CoordinatorProtocol {
-  var navigation: NavigationPortocol
-  private let factory: SettingsFactory
+  var navigation: NavigationProtocol
+  var childCoordinators: [CoordinatorProtocol] = []
 
-   var userConfigurationCoordinator: CoordinatorProtocol?
+  private let factory: SettingsFactoryProtocol
   private weak var delegate: SettingsCoordinatorDelegate?
 
   init(
-    navigation: NavigationPortocol,
-    factory: SettingsFactory,
+    navigation: NavigationProtocol,
+    factory: SettingsFactoryProtocol,
     delegate: SettingsCoordinatorDelegate?
   ) {
     self.navigation = navigation
@@ -35,6 +36,8 @@ final class SettingsCoordinator: CoordinatorProtocol {
     factory.makeTabBarItem(navigation: navigation)
   }
 }
+
+extension SettingsCoordinator: ParentCoordinator { }
 
 extension SettingsCoordinator: SettingViewControllerDelegate {
   func didSelectCell(settingsNavigation: SettingsNavigation) {
@@ -57,17 +60,23 @@ extension SettingsCoordinator: SettingViewControllerDelegate {
   }
 
   private func callUserConfigurationCoordinator() {
-    userConfigurationCoordinator = factory.makeUserConfigurationCoordinator(delegate: self)
-    guard let userConfigurationCoordinator = userConfigurationCoordinator else { return }
-    userConfigurationCoordinator.start()
+    let userConfigurationCoordinator = factory.makeUserConfigurationCoordinator(delegate: self)
+    addChildCoordinator(userConfigurationCoordinator)
     let viewController = userConfigurationCoordinator.navigation.rootViewController
     navigation.present(viewController, animate: true)
+
+    // Это замыкание срабатывает когда мы закрываем  экран свайпом вниз(экран был открыть не на весь экран), если экран был открыт на весь срабатывает метод делегата   UserConfigurationCoordinatorDelegate. Здесь это приведено для примера в реальном проекте нужно использовать одну из функций в зависимости как был представлен контроллер на весь экран или нет.
+    userConfigurationCoordinator.navigation.dismissNavigation = { [weak self] in
+      guard let sSelf = self else { return }
+      sSelf.removeChildCoordinators(userConfigurationCoordinator)
+    }
   }
 }
 
 extension SettingsCoordinator: UserConfigurationCoordinatorDelegate {
-  func didFinish() {
-    userConfigurationCoordinator = nil
+  func didFinish(childCoordinator: CoordinatorProtocol) {
+    childCoordinator.navigation.dismissNavigation = nil
+    removeChildCoordinators(childCoordinator)
     navigation.dismiss(animate: true)
   }
 }

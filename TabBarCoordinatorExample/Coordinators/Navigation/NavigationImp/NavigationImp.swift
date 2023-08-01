@@ -1,29 +1,12 @@
 //
-//  NavigationPortocol.swift
+//  NavigationImp.swift
 //  TabBarCoordinatorExample
 //
-//  Created by Yaroslav on 26.07.23.
+//  Created by Yaroslav on 27.07.23.
 //
 
 import UIKit
 
-
-protocol NavigationPortocol: AnyObject {
-  var rootViewController: UINavigationController { get }
-  var viewController: [UIViewController] { get set }
-  var navigationBar: UINavigationBar { get }
-
-  func present(_ viewControllerToPresent: UIViewController, animate: Bool)
-  func pushViewController(_ viewControllerToPresent: UIViewController, animate: Bool, completion: (() -> Void)?)
-  func dismiss(animate: Bool)
-  var dismissNavigation: (() -> Void)? { get set }
-}
-
-extension NavigationPortocol {
-  func pushViewController(_ viewControllerToPresent: UIViewController, animated: Bool) {
-   pushViewController(viewControllerToPresent, animate: animated, completion: nil)
-  }
-}
 
 final class NavigationImp: NSObject {
   var rootViewController: UINavigationController
@@ -39,7 +22,7 @@ final class NavigationImp: NSObject {
   }
 }
 
-extension NavigationImp: NavigationPortocol {
+extension NavigationImp: NavigationProtocol {
   var viewController: [UIViewController] {
     get {
       rootViewController.viewControllers

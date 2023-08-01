@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol MyPostsViewProtocol: AnyObject {
   var contentView: UIView! { get }
   var collectionView: UICollectionView! { get }
@@ -19,6 +20,7 @@ final class MyPostsView: UIView {
   @IBOutlet weak var contentView: UIView!
   @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var exampleLabel: UILabel!
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
     commonInit()

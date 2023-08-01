@@ -7,11 +7,12 @@
 
 import UIKit
 
-final class CommunitiesCoordinator: CoordinatorProtocol {
-  var navigation: NavigationPortocol
-  private let factory: CommunitiesFactory
 
-  init(navigation: NavigationPortocol, factory: CommunitiesFactory) {
+final class CommunitiesCoordinator: CoordinatorProtocol {
+  var navigation: NavigationProtocol
+  private let factory: CommunitiesFactoryProtocol
+
+  init(navigation: NavigationProtocol, factory: CommunitiesFactoryProtocol) {
     self.navigation = navigation
     self.factory = factory
   }

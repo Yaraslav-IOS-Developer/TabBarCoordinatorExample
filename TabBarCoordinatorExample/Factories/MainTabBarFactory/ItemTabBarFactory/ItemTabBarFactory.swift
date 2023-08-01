@@ -7,11 +7,12 @@
 
 import UIKit
 
+
 protocol ItemTabBarFactory { }
 
 extension ItemTabBarFactory {
   func makeItemTabBar(
-    navigation: NavigationPortocol,
+    navigation: NavigationProtocol,
     title: String, image: String,
     selectedImage: String
   ) {

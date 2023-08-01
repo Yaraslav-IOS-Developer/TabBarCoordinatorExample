@@ -8,7 +8,13 @@
 import UIKit
 
 
-final class AuthView: UIView {
+protocol AuthViewProtocol: AnyObject {
+  var contentView: UIView! { get }
+  var onLoginButton: (() -> Void)? { get set }
+  func logInButtonTapped(_ sender: UIButton)
+}
+
+final class AuthView: UIView, AuthViewProtocol {
   @IBOutlet weak var contentView: UIView!
 
   var onLoginButton: (() -> Void)?

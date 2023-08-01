@@ -7,22 +7,22 @@
 
 import UIKit
 
-protocol CommunitiesFactory {
+
+protocol CommunitiesFactoryProtocol {
   func makeCommunitiesViewController() -> UIViewController
-  func makeTabBarItem(navigation: NavigationPortocol)
+  func makeTabBarItem(navigation: NavigationProtocol)
 }
 
-struct CommunitiesFactoryImp: CommunitiesFactory {
-  let appDIContainer: AppDIContainer?
-
+struct CommunitiesFactoryImp: CommunitiesFactoryProtocol {
   func makeCommunitiesViewController() -> UIViewController {
-    let communitiesViewController = CommunitiesViewController()
+    let view = CommunitiesView()
+    let communitiesViewController = CommunitiesViewController(communitiesView: view)
     communitiesViewController.navigationItem.title = "Communities"
 
     return communitiesViewController
   }
 
-  func makeTabBarItem(navigation: NavigationPortocol) {
+  func makeTabBarItem(navigation: NavigationProtocol) {
     makeItemTabBar(
       navigation: navigation,
       title: "Communities",

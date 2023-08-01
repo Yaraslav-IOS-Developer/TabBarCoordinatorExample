@@ -13,14 +13,16 @@ protocol SettingViewControllerDelegate: AnyObject {
 }
 
 final class SettingViewController: UIViewController {
-  private var containerView: SettingView! {
-    return view as? SettingView
-  }
-
-  private let viewModel: SettingsViewModel
+  private let viewModel: SettingsViewModelProtocol
+  private var settingView: SettingViewProtocol
   private weak var settingViewControllerDelegate: SettingViewControllerDelegate?
 
-  init(viewModel: SettingsViewModel, settingViewControllerDelegate: SettingViewControllerDelegate?) {
+  init(
+    settingView: SettingViewProtocol,
+    viewModel: SettingsViewModelProtocol,
+    settingViewControllerDelegate: SettingViewControllerDelegate?
+  ) {
+    self.settingView = settingView
     self.viewModel = viewModel
     self.settingViewControllerDelegate = settingViewControllerDelegate
     super.init(nibName: nil, bundle: nil)
@@ -31,7 +33,7 @@ final class SettingViewController: UIViewController {
   }
 
   override func loadView() {
-    view = SettingView()
+    view  = settingView as? UIView
   }
 
   override func viewDidLoad() {
@@ -41,13 +43,13 @@ final class SettingViewController: UIViewController {
 
   private func setupTableView() {
     registerCell()
-    containerView.tableView.delegate = self
-    containerView.tableView.dataSource = self
-    containerView.tableView.backgroundColor = .systemGroupedBackground
+    settingView.tableView.delegate = self
+    settingView.tableView.dataSource = self
+    settingView.tableView.backgroundColor = .systemGroupedBackground
   }
 
   private func registerCell() {
-    containerView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    settingView.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
   }
 }
 

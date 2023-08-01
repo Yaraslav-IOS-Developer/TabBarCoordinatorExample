@@ -15,7 +15,6 @@ protocol UserConfigurationViewControllerCoordinator: AnyObject {
 
 final class UserConfigurationViewController: UIViewController {
   private var userConfigurationView: UserConfigurationProtocol
-
   private weak var coordinator: UserConfigurationViewControllerCoordinator?
 
   init(userConfigurationView: UserConfigurationProtocol, coordinator: UserConfigurationViewControllerCoordinator?) {

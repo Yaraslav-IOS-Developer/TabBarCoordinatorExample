@@ -8,7 +8,11 @@
 import UIKit
 
 
-final class AccountView: UIView {
+protocol AccountViewProtocol: AnyObject {
+  var contentView: UIView! { get }
+}
+
+final class AccountView: UIView, AccountViewProtocol {
   @IBOutlet weak var contentView: UIView!
 
   override init(frame: CGRect) {

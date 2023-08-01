@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 protocol MyPostsViewControllerDelegate: AnyObject {
   func didSelectPost(id: Int)
   func didTapAddNewPostButton()

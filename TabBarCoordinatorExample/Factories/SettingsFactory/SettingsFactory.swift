@@ -8,17 +8,27 @@
 import UIKit
 
 
-struct SettingsFactory: ItemTabBarFactory {
-  let appDIContainer: AppDIContainer?
+protocol SettingsFactoryProtocol {
+  var appDIContainer: AppDIContainerProtocol? { get }
 
-  func makeSettingsViewController(settingViewControllerDelegate: SettingViewControllerDelegate?) -> SettingViewController {
+  func makeTabBarItem(navigation: NavigationProtocol)
+  func makeSettingsViewController(settingViewControllerDelegate: SettingViewControllerDelegate?) -> UIViewController
+  func makeUserConfigurationCoordinator(delegate: UserConfigurationCoordinatorDelegate?) -> CoordinatorProtocol
+  func makeAccountViewController() -> UIViewController
+  func makeThemeViewController() -> UIViewController
+}
+
+struct SettingsFactory: SettingsFactoryProtocol {
+  let appDIContainer: AppDIContainerProtocol?
+
+  func makeSettingsViewController(settingViewControllerDelegate: SettingViewControllerDelegate?) -> UIViewController {
+    let view = SettingView()
     let viewModel = SettingsViewModel(auth: appDIContainer?.auth)
-    let controller = SettingViewController(viewModel: viewModel, settingViewControllerDelegate: settingViewControllerDelegate)
+    let controller = SettingViewController(settingView: view, viewModel: viewModel, settingViewControllerDelegate: settingViewControllerDelegate)
     controller.title = "Settings"
     return controller
   }
-
-  func makeTabBarItem(navigation: NavigationPortocol) {
+  func makeTabBarItem(navigation: NavigationProtocol) {
     makeItemTabBar(
       navigation: navigation,
       title: "Setting",
@@ -37,15 +47,18 @@ struct SettingsFactory: ItemTabBarFactory {
   }
 
   func makeAccountViewController() -> UIViewController {
-    let accountViewController = AccountViewController()
+    let view = AccountView()
+    let accountViewController = AccountViewController(accountView: view)
     accountViewController.title = "Account"
     return accountViewController
   }
 
   func makeThemeViewController() -> UIViewController {
-    let themeViewController = ThemeViewController()
+    let view = ThemeView()
+    let themeViewController = ThemeViewController(themeView: view)
     themeViewController.title = "Theme"
     return themeViewController
   }
 }
 
+extension SettingsFactory: ItemTabBarFactory { }

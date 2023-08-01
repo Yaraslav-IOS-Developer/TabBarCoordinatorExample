@@ -7,11 +7,13 @@
 
 import UIKit
 
-protocol MyPostsMediator {
-  func updateController(title: String, navigation: NavigationPortocol)
+
+protocol MyPostsMediatorProtocol {
+  func updateController(title: String, navigation: NavigationProtocol)
 }
-struct MyPostsMediatorImp: MyPostsMediator {
-  func updateController(title: String, navigation: NavigationPortocol) {
+
+struct MyPostsMediatorImp: MyPostsMediatorProtocol {
+  func updateController(title: String, navigation: NavigationProtocol) {
     guard let myPostViewController = navigation.rootViewController.topViewController as? MyPostsViewController else { return }
 
     myPostViewController.updateLabel(title: title)

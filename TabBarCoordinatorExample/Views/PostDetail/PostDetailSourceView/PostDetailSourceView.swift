@@ -9,6 +9,7 @@ import UIKit
 
 
 protocol PostDetailSourceProtocol: AnyObject {
+  var contentView: UIView! { get }
 
 }
 

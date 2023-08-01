@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 final class MoreDetailViewController: UIViewController {
   private var moreDetailView: MoreDetailProtocol
 

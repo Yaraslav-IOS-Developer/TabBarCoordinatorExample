@@ -7,18 +7,19 @@
 
 import UIKit
 
+
 final class PostCoordinator: CoordinatorProtocol {
-  var navigation: NavigationPortocol
+  var navigation: NavigationProtocol
   var childCoordinators: [CoordinatorProtocol] = []
-  private let factory: MyPostsFactory
-  private let myPostsMediator: MyPostsMediator
+  private let factory: MyPostsFactoryProtocol
+  private let myPostsMediator: MyPostsMediatorProtocol
 
   init(
-    navigation: NavigationPortocol,
-    newPostView: NewPostView,
-    myPostView: MyPostsView,
-    factory: MyPostsFactory,
-    myPostsMediator: MyPostsMediator
+    navigation: NavigationProtocol,
+    newPostView: NewPostViewProtocol,
+    myPostView: MyPostsViewProtocol,
+    factory: MyPostsFactoryProtocol,
+    myPostsMediator: MyPostsMediatorProtocol
   ) {
     self.navigation = navigation
     self.factory = factory

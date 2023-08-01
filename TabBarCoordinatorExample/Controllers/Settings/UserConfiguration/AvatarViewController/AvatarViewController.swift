@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class AvatarViewController: UIViewController {
 
+final class AvatarViewController: UIViewController {
   private var avatarView: AvatarProtocol
 
   init(avatarView: AvatarProtocol) {

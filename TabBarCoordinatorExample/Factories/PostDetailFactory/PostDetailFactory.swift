@@ -7,7 +7,17 @@
 
 import UIKit
 
-struct PostDetailFactory {
+
+protocol PostDetailFactoryProtocol {
+  var id: Int { get }
+
+  func makePostDetailViewController(delegate: PostDetailDelegate?, coordinator: PostDetailViewControllerCoordinator? ) -> UIViewController
+  func makePostDetailPhotoViewController() -> UIViewController
+  func makeMoreDetailViewController() -> UIViewController
+  func makePostDetailSourceViewController() -> UIViewController
+}
+
+struct PostDetailFactory: PostDetailFactoryProtocol {
   private(set) var id: Int
 
   func makePostDetailViewController(delegate: PostDetailDelegate?, coordinator: PostDetailViewControllerCoordinator? ) -> UIViewController {

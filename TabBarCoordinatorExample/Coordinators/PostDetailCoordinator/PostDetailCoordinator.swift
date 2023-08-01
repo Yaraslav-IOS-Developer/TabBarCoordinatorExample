@@ -7,14 +7,15 @@
 
 import UIKit
 
+
 final class PostDetailCoordinator: CoordinatorProtocol {
-  var navigation: NavigationPortocol
-  private var factory: PostDetailFactory
+  var navigation: NavigationProtocol
+  private var factory: PostDetailFactoryProtocol
   private weak var parentCoordinator: ParentCoordinator?
 
   init(
-    navigation: NavigationPortocol,
-    factory: PostDetailFactory,
+    navigation: NavigationProtocol,
+    factory: PostDetailFactoryProtocol,
     parentCoordinator: ParentCoordinator?
   ) {
     self.navigation = navigation

@@ -7,13 +7,21 @@
 
 import UIKit
 
+
 final class AccountViewController: UIViewController {
-  private var containerView: AccountView! {
-    return view as? AccountView
+  private var accountView: AccountViewProtocol
+
+  init(accountView: AccountViewProtocol) {
+    self.accountView = accountView
+    super.init(nibName: nil, bundle: nil)
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
   override func loadView() {
-    view = AccountView()
+    view = accountView as? UIView
   }
 
   override func viewDidLoad() {

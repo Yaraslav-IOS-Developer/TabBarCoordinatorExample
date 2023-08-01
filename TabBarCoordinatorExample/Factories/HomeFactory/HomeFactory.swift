@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol HomeFactory {
-  func makeTabBarItem(navigation: NavigationPortocol)
+
+protocol HomeFactoryProtocol {
+  func makeTabBarItem(navigation: NavigationProtocol)
   func makeHomeViewController(coordinator: HomeViewControllerCoordinator?) -> UIViewController
-  func makePostDetailsCoordinator(navigation: NavigationPortocol, id: Int, parentCoordinator: ParentCoordinator?) -> CoordinatorProtocol
+  func makePostDetailsCoordinator(navigation: NavigationProtocol, id: Int, parentCoordinator: ParentCoordinator?) -> CoordinatorProtocol
 }
 
-struct HomeFactoryImp: HomeFactory {
-
+struct HomeFactoryImp: HomeFactoryProtocol {
   func makeHomeViewController(coordinator: HomeViewControllerCoordinator?) -> UIViewController {
     let homeView = HomeView()
     let layout = UICollectionViewFlowLayout()
@@ -24,7 +24,7 @@ struct HomeFactoryImp: HomeFactory {
     return homeViewController
   }
 
-  func makeTabBarItem(navigation: NavigationPortocol) {
+  func makeTabBarItem(navigation: NavigationProtocol) {
     makeItemTabBar(
       navigation: navigation,
       title: "Home",
@@ -33,7 +33,7 @@ struct HomeFactoryImp: HomeFactory {
   }
 
   func makePostDetailsCoordinator(
-    navigation: NavigationPortocol,
+    navigation: NavigationProtocol,
     id: Int,
     parentCoordinator: ParentCoordinator?
   ) -> CoordinatorProtocol {
